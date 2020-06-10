@@ -1,16 +1,15 @@
 class KidsController < ApplicationController
-
   def show
     @kid = Kid.find(params[:id])
   end
 
   def create
-    @kid = Kid.new(kid_param)
+    @kid = Kid.new(kid_params)
     @kid.parent = current_user
     if @kid.save
       redirect_to dashboard_path
     else
-      render :new
+      render :news
     end
   end
 
@@ -18,20 +17,16 @@ class KidsController < ApplicationController
     @kid = Kid.find(params[:id])
   end
 
-def update
-  @kid = Kid.find(params[:id])
-  @kid.update(kid_param)
-  redirect_to kid_path
-    if @item.save
-      redirect_to item_path
-    else
-      render :new
-    end
-end
+  def update
+    @kid = Kid.find(params[:id])
+    @kid.update(kid_params)
+    @kid.save
+    redirect_to kid_path
+  end
 
   private
 
-  def kid_param
+  def kid_params
     params.require(:kid).permit(:first_name, :weight, :age)
   end
 end
