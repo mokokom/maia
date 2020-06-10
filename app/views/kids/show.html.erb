@@ -1,2 +1,10 @@
-<h1>show kids</h1>
+<h1>show kid</h1>
 
+<%= link_to 'Editer le profil', kid_path%>
+
+<p><%= @kid.first_name %></p>
+<p><%=@kid.parent.last_name%></p>
+
+<p><%= @kid.age %></p>
+<p><%= @kid.weight %></p>
+<p>autres infos : santé, allergies...</p>

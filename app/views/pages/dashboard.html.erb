@@ -1,3 +1,17 @@
+<h1>Bonjour <%= current_user.first_name %></h1>
+
+<br>
+<br>
+
+<h2> mes kids</h2>
+<% current_user.kids.each do |kid| %>
+<%= link_to kid.first_name, edit_kid_path(kid) %>
+<% end %>
+
+
+<br>
+<br>
+
 <div class="form-container">
   <div class="form-centered">
     <h2>Ajouter un enfant à votre tableau de bord</h2>
