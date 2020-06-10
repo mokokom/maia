@@ -1,0 +1,11 @@
+<div class="form-container">
+  <div class="form-centered">
+    <h2>Ajouter un enfant à votre tableau de bord</h2>
+    <%= simple_form_for(@kid) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :age %>
+    <%= f.input :weight %>
+    <%= f.button :submit  %>
+    <% end %>
+  </div>
+</div>
