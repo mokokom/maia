@@ -11,7 +11,7 @@
 
 <h2> mes kids</h2>
 <% current_user.kids.each do |kid| %>
-<%= link_to kid.first_name, edit_kid_path(kid) %>
+<%= kid.first_name %>
 <% end %>
 
 
