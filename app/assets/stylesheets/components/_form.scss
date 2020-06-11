@@ -26,6 +26,10 @@
   border-bottom: 9px solid $sleep-blue;
 }
 
+.underline-title.inscription:before {
+  border-bottom: 9px solid $camera-cyan;
+}
+
 .info  {
   font-size: 20px;
   color: black;
