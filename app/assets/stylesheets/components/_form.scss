@@ -1,0 +1,38 @@
+.form-control {
+  // border-top: grey;
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  background-color: #ffeeee;
+}
+
+.form-control:focus {
+  border: none;
+  background-color: #ffeeee;
+}
+
+.underline-title {
+  display: inline-block;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.underline-title:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: 0;
+  left: 25%;
+  border-bottom: 9px solid $sleep-blue;
+}
+
+.info  {
+  font-size: 20px;
+  color: black;
+}
+
+.device-links {
+  font-size: 0.7em;
+  color: black;
+  text-decoration: underline;
+}

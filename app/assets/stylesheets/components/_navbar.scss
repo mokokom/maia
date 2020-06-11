@@ -3,10 +3,30 @@
   background: white;
 }
 
+.navbar-lewagon-logout {
+  justify-content: space-between;
+  background: $light-pink;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.btn-navbar-right {
+  border: none;
+  background-color: $light-pink;
+}
+
+@media screen and (min-width: 576px) {
+  .btn-navbar-right {
+    display: none;
+  }
 }

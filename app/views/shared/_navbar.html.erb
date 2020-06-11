@@ -1,16 +1,26 @@
+<% if user_signed_in? %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% else %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon-logout">
+    <% end %>
+    <%= link_to "#", class: "navbar-brand" do %>
+    <i class="fas fa-angle-left"></i>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="dropdown dropleft">
+      <button class="btn-navbar-right" type="button" data-toggle="dropdown" aria-expanded="false"><i
+          class="fas fa-ellipsis-v"></i>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Fiche enfant</a>
+        <a class="dropdown-item" href="#">Mon profil</a>
+        <a class="dropdown-item" href="#">Paramètres</a>
+      </div>
+    </div>
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
@@ -25,11 +35,11 @@
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
-      <% else %>
+        <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
-      <% end %>
-    </ul>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
