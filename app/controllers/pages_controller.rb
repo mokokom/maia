@@ -12,6 +12,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @kid = Kid.new
+    @event = Event.new
   end
-
 end

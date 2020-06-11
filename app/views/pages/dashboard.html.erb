@@ -1,43 +1,5 @@
-<h1>Bonjour <%= current_user.first_name %></h1>
-
-<br>
-<br>
-
-<p>****</p>
-<p>menu</p>
-<p><%=  link_to 'Mon profil(Editer)', edit_user_registration_path  %></p>
-<p><%=  link_to 'Fiche profil enfants', kids_path %></p>
-<p>****</p>
-<br>
-<br>
-
-<h2> mes kids</h2>
-  <% current_user.kids.each do |kid| %>
-  <%= kid.first_name %>
-
-    <% if kid.babysits.empty? %>
-      <p>Ajouter une nounou à <%= kid.first_name %> </p>
-      <p>Renseignez l'email de la nounou </p>
-
-      <input type="text">
-
-    <% end %>
-  <br>
-  <% end %>
-
-<br>
-<br>
-
-<div class="form-container">
-  <div class="form-centered">
-    <h2>Ajouter un enfant à votre tableau de bord</h2>
-    <%= simple_form_for(@kid) do |f| %>
-
-<%= f.input :photo, as: :file %>
-    <%= f.input :first_name %>
-    <%= f.input :age %>
-    <%= f.input :weight %>
-    <%= f.button :submit  %>
-    <% end %>
-  </div>
-</div>
+<% if current_user.is_nanny %>
+  <%= render 'shared/dashboardbabysit', babysit: @babysit, event: @event %>
+<% else %>
+  <%= render 'shared/dashboardfamily' %>
+<% end %>

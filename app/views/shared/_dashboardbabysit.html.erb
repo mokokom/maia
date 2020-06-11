@@ -1,0 +1,15 @@
+<h1>Bonjour <%= current_user.first_name %></h1>
+
+<div class="form-container">
+  <div class="form-centered">
+    <h2>Créer un event :</h2>
+    <%= simple_form_for([babysit, event]) do |f| %>
+    <%= f.input :tag %>
+    <%= f.input :content %>
+    <%= f.input :begin_event %>
+    <%= f.input :end_event %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit  %>
+    <% end %>
+  </div>
+</div>
