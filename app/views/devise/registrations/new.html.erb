@@ -22,10 +22,10 @@
                 required: true %>
     <%= f.input :last_name,
                 required: true %>
-    <%= f.input :email,
+    <%= f.input :email %>
 
-        <!-- <%= f.input :is_nanny, as: :boolean, label: false,
-                required: true %> -->
+        <%= f.input :is_nanny, as: :boolean, label: false,
+                required: true %>
         <%= f.input :is_nanny, label: false, default: 1, collection: ["nounou", "famille"] %>
         <%= f.input :email,
                 label: false,
