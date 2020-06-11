@@ -7,18 +7,22 @@
 <p>menu</p>
 <p><%=  link_to 'Mon profil(Editer)', edit_user_registration_path  %></p>
 <p><%=  link_to 'Fiche profil enfants', kids_path %></p>
-
+<p>****</p>
 
 <% if current_user.is_nanny == true %>
     <% current_user.babysits.each do |babysit| %>
-    <%=babysit.kid.first_name%>
+      <% if babysit.validated == false %>
+          <p> <%=babysit.kid.first_name%> - en attente de validation
+          <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
+          <i class="far fa-check-circle"></i></p>
+          <% end %>
+      <% else %>
+         <p> <%=babysit.kid.first_name%> - validé!</p>
+      <% end %>
   <% end %>
-
 
 <% else %>
 
-  <p><%=  link_to 'Fiche profil enfants', kids_path %></p>
-  <p>****</p>
   <br>
   <br>
 

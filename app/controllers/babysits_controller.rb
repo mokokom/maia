@@ -13,4 +13,13 @@ class BabysitsController < ApplicationController
       render 'pages/dashboard'
     end
   end
+
+  def update
+    kid = Kid.find(params[:kid_id])
+    @babysit = Babysit.find(params[:id])
+    @babysit.kid = kid
+    @babysit.validated = true
+    @babysit.save
+    redirect_to dashboard_path
+  end
 end
