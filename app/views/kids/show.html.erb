@@ -4,9 +4,9 @@
 
 <%= link_to 'Editer le profil', edit_kid_path(@kid)%>
 
-
-<%= link_to 'Nounou (profil)', kid_path(@kid)%>
-
+<% if current_user.is_nanny == false  %>
+  <%= link_to 'Nounou (profil)', kid_path(@kid) %>
+<% end %>
 
 <p><%= @kid.first_name %></p>
 <p><%=@kid.parent.last_name%></p>
