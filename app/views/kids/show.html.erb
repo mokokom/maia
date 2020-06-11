@@ -20,7 +20,7 @@
 <br>
 
 <% if current_user.is_nanny == false  %>
-<p>profil nounou</p>
+<p>Profil nounou</p>
 <% @kid.babysits.each do |babysit|%>
   <p><%= babysit.nanny.first_name %></p>
   <p><%= babysit.nanny.last_name %></p>
