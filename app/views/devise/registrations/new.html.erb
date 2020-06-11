@@ -7,7 +7,7 @@
 
     <%= f.input :is_nanny, as: :boolean,
                 required: true %>
-
+    <%= f.input :is_nanny, collection: ["nounou", "famille"] %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
