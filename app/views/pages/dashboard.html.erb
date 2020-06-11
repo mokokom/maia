@@ -28,11 +28,11 @@
 
   <h2> mes kids</h2>
     <% current_user.kids.each do |kid| %>
-    <%= kid.first_name %>
-    <% kid.babysits.each do |babysit| %>
+     <p>  <%= kid.first_name %><% kid.babysits.each do |babysit| %>
       <% if babysit.validated == false %>
-        <p> en attente de validation</p>
+      (en attente de validation)</p>
       <% end %>
+      <br>
     <% end %>
 
     <% if kid.babysits.empty? %>
@@ -64,7 +64,7 @@
 
   <div class="form-container">
     <div class="form-centered">
-      <h2>Ajouter un enfant à votre tableau de bord</h2>
+      <h2>Ajouter un enfant</h2>
       <%= simple_form_for(@kid) do |f| %>
 
   <%= f.input :photo, as: :file %>

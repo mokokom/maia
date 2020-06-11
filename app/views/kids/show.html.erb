@@ -4,13 +4,29 @@
 
 <%= link_to 'Editer le profil', edit_kid_path(@kid)%>
 
-<% if current_user.is_nanny == false  %>
-  <%= link_to 'Nounou (profil)', kid_path(@kid) %>
-<% end %>
-
 <p><%= @kid.first_name %></p>
 <p><%=@kid.parent.last_name%></p>
 
-<p><%= @kid.age %></p>
-<p><%= @kid.weight %></p>
-<p>autres infos : santé, allergies...</p>
+<p><%= @kid.age %>mois</p>
+<p><%= @kid.weight %>kgs</p>
+<p>rythme de sommeil:</p>
+<p><%= @kid.sleep_habit %></p>
+<p>habitudes alimentaires:</p>
+<p><%= @kid.food_habit %></p>
+<p>santé:</p>
+<p><%= @kid.health_habit %></p>
+
+<br>
+<br>
+
+<% if current_user.is_nanny == false  %>
+<p>profil nounou</p>
+<% @kid.babysits.each do |babysit|%>
+  <p><%= babysit.nanny.first_name %></p>
+  <p><%= babysit.nanny.last_name %></p>
+  <p>email:<%= babysit.nanny.email %></p>
+  <p>adresse:<%= babysit.nanny.address %></p>
+  <p>téléphone:<%= babysit.nanny.phone_number %></p>
+<% end %>
+
+<% end %>
