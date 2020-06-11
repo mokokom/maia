@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-   def new
+  def new
     @kid = Kid.new
   end
 end
