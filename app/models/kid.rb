@@ -3,5 +3,7 @@ class Kid < ApplicationRecord
   has_many :babysits
   has_many :events, through: :babysits
 
+  has_one_attached :photo
+
   validates :first_name, presence: true
 end

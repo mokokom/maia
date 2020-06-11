@@ -1,7 +1,13 @@
 <div class="form-container">
   <div class="form-centered">
     <h2>Ajouter un enfant à votre tableau de bord</h2>
+
+
+
+      <%= cl_image_tag @kid.photo.key, height: 300, width: 400, crop: :fill %>
+
     <%= simple_form_for(@kid) do |f| %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :first_name %>
     <%= f.input :age %>
     <%= f.input :weight %>

@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one_attached :photo
+
   validates_inclusion_of :is_nanny, in: [true, false]
   validates :phone_number, format: { with: /\d{10}/, message: "Entrez un téléphone valide" }, allow_nil: true
   validates :email, presence: true, uniqueness: true, format: { with: /.+@.+\.[a-zA-Z0-9 ]+/, message: "Entrez un email valide" }
