@@ -12,7 +12,10 @@
   </head>
 
   <body>
+  <% unless controller.action_name == 'home'%>
   <%= render 'shared/navbar' %>
+  <% end %>
+
 
     <%= yield %>
 
