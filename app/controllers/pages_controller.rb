@@ -13,4 +13,5 @@ class PagesController < ApplicationController
   def dashboard
     @kid = Kid.new
   end
+
 end
