@@ -19,8 +19,22 @@
       <p>Ajouter une nounou à <%= kid.first_name %> </p>
       <p>Renseignez l'email de la nounou </p>
 
-      <input type="text">
+<form action="/dashboard" class='form-inline'>
 
+      <input type="text" name="email">
+      <input type="submit" value='search' class="btn btn-primary">
+  </form>
+
+    <% if @result %>
+
+      <%= @result.first_name %>
+
+      <%= form_for([kid, @babysit]) do |f| %>
+        <%= f.hidden_field :user_id, value: @result.id %>
+        <%= f.submit %>
+      <% end %>
+
+      <% end %>
     <% end %>
   <br>
   <% end %>

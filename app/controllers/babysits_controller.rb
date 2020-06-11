@@ -1,10 +1,16 @@
 class BabysitsController < ApplicationController
   def create
-    @user = User.where(params[:email])
+    kid = Kid.find(params[:kid_id])
+    @nanny = User.find(params[:babysit][:user_id])
     @babysit = Babysit.new
-    @babysit.kid = @kid
-    @babysit.nanny = @user
+    @babysit.kid = kid
+    @kid = Kid.new
+    @babysit.nanny = @nanny
 
-    @babysit.save
+    if @babysit.save
+      redirect_to dashboard_path
+    else
+      render 'pages/dashboard'
+    end
   end
 end
