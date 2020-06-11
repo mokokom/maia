@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_06_11_084832) do
+=======
+ActiveRecord::Schema.define(version: 2020_06_11_133115) do
+>>>>>>> 1e1883f0371a13cdfac1562eed4e478554d727c6
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_084832) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "validated", default: false
     t.index ["kid_id"], name: "index_babysits_on_kid_id"
     t.index ["user_id"], name: "index_babysits_on_user_id"
   end
@@ -65,6 +70,9 @@ ActiveRecord::Schema.define(version: 2020_06_11_084832) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "food_habit"
+    t.text "sleep_habit"
+    t.text "health_habit"
     t.index ["user_id"], name: "index_kids_on_user_id"
   end
 

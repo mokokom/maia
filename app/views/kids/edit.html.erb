@@ -1,5 +1,6 @@
 <div class="form-container">
   <div class="form-centered">
+<<<<<<< HEAD:app/views/dashboard/new.html.erb
     <h2>Ajouter un enfant à votre tableau de bord</h2>
 
 
@@ -9,6 +10,12 @@
 
     <%= simple_form_for(@kid) do |f| %>
     <%= f.input :photo, as: :file %>
+=======
+    <h2>Editer le profil</h2>
+    <%= simple_form_for(@kid) do |f| %>
+
+  <%= f.input :photo, as: :file %>
+>>>>>>> 1e1883f0371a13cdfac1562eed4e478554d727c6:app/views/kids/edit.html.erb
     <%= f.input :first_name %>
     <%= f.input :age %>
     <%= f.input :weight %>
