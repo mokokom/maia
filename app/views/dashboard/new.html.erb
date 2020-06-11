@@ -3,8 +3,9 @@
     <h2>Ajouter un enfant à votre tableau de bord</h2>
 
 
-
-      <%= cl_image_tag @kid.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @kid.photo.attached? %>
+  <%= cl_image_tag @kid.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
     <%= simple_form_for(@kid) do |f| %>
     <%= f.input :photo, as: :file %>
