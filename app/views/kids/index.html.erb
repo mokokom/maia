@@ -1,0 +1,15 @@
+<h1>fiche profils enfants</h1>
+
+<%= link_to 'dashboard', dashboard_path %>
+
+
+<% current_user.kids.each do |kid| %>
+<p><%= kid.first_name %> - <%= link_to 'Voir le profil', kid_path(kid) %></p>
+<% end %>
+
+
+<% if current_user.is_nanny == true %>
+    <% current_user.babysits.each do |babysit| %>
+    <%=babysit.kid.first_name%> - <%= link_to 'Voir le profil', kid_path(babysit.kid) %>
+  <% end %>
+<% end %>

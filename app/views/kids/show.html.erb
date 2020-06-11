@@ -1,0 +1,16 @@
+<h1>show kid</h1>
+
+<%= link_to 'dashboard', dashboard_path %>
+
+<%= link_to 'Editer le profil', edit_kid_path(@kid)%>
+
+<% if current_user.is_nanny == false  %>
+  <%= link_to 'Nounou (profil)', kid_path(@kid) %>
+<% end %>
+
+<p><%= @kid.first_name %></p>
+<p><%=@kid.parent.last_name%></p>
+
+<p><%= @kid.age %></p>
+<p><%= @kid.weight %></p>
+<p>autres infos : santé, allergies...</p>
