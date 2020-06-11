@@ -20,6 +20,10 @@
   background-color: white;
 }
 
+.navbar-brand-sign {
+  color: $gray;
+}
+
 @media screen and (min-width: 576px) {
   .btn-navbar-right {
     display: none;
