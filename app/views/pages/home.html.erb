@@ -23,8 +23,15 @@
 		<div class="col-8 text-center">
 			<p>maÏa</p>
 			<p class="text-center">Suivez et partagez le quotidien de votre enfant</p>
-			<button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0">connexion</button>
-			<button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0">inscription</button>
+
+      <%= link_to new_user_session_path do %>
+        <button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0">connexion</button>
+      <% end %>
+
+      <%= link_to new_user_registration_path do %>
+        <button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0">inscription</button>
+      <% end %>
+
 		</div>
 		<div class="col-8 d-flex flex-column flex-md-row">
 			<div class="feature-1 mt-5">
