@@ -16,7 +16,7 @@
       <div class="form-inputs">
 
 
-    <%= f.input :is_nanny, as: :boolean,
+        <!-- <%= f.input :is_nanny, as: :boolean,
                 required: true %>
     <%= f.input :first_name,
                 required: true %>
@@ -25,7 +25,7 @@
     <%= f.input :email %>
 
         <%= f.input :is_nanny, as: :boolean, label: false,
-                required: true %>
+                required: true %> -->
         <%= f.input :is_nanny, label: false, default: 1, collection: ["nounou", "famille"] %>
         <%= f.input :email,
                 label: false,
