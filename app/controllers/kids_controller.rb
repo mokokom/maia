@@ -1,5 +1,4 @@
 class KidsController < ApplicationController
-
   def index
     @kids = Kid.all
   end
@@ -32,6 +31,6 @@ class KidsController < ApplicationController
   private
 
   def kid_params
-    params.require(:kid).permit(:first_name, :weight, :age)
+    params.require(:kid).permit(:first_name, :weight, :age, :photo)
   end
 end

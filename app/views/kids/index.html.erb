@@ -3,7 +3,7 @@
 <%= link_to 'dashboard', dashboard_path %>
 
 
-<% @kids.each do |kid| %>
+<% current_user.kids.each do |kid| %>
 <p><%= kid.first_name %> - <%= link_to 'Voir le profil', kid_path(kid) %></p>
 <% end %>
 
