@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $light-pink;
+  background: transparent;
   color: $light-gray;
 }
 
@@ -27,8 +27,21 @@
 
 .btn-navbar-right {
   border: none;
+  background-color: transparent;
+}
+
+.fa-angle-left {
+  color: $light-gray;
+}
+
+.fa-ellipsis-v {
+  color: $light-gray;
+}
+
+.new-session {
   background-color: $light-pink;
 }
+
 
 @media screen and (min-width: 576px) {
   .btn-navbar-right {
