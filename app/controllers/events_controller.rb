@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:babysit.kid][:babysit_id])
+    @event = Event.find(params[:id])
     @event.update(event_params)
 
     redirect_to dashboard_path
