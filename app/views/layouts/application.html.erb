@@ -12,7 +12,9 @@
 </head>
 
 <body class=" <%= user_signed_in? ? 'bg-white' : 'bg-pink' %> ">
+  <% unless controller.action_name == 'home'  %>
   <%= render 'shared/navbar' %>
+  <% end %>
   <%= yield %>
 
 
