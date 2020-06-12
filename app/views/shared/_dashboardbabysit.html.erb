@@ -1,4 +1,5 @@
 <h1>Bonjour <%= current_user.first_name %></h1>
+
 <% current_user.babysits.each do |babysit| %>
 <% if babysit.validated == false %>
 <p> <%=babysit.kid.first_name%> - en attente de validation
@@ -33,6 +34,7 @@
 <p><%= event.content %> </p>
 <p><%= event.begin_event %> </p>
  <p><%= event.end_event %> </p>
+<%= link_to 'Editer', edit_event_path(event) %>
 </div>
 <% end %>
 
