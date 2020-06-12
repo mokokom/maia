@@ -11,7 +11,7 @@
 <div class="form-container">
   <div class="form-centered">
     <h2>Créer un event :</h2>
-    <%= simple_form_for([babysit.kid, babysit, @event]) do |f| %>
+    <%= simple_form_for([babysit.kid, babysit, event]) do |f| %>
     <%= f.hidden_field :kid_id, value: babysit.kid.id %>
     <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
     <%= f.input :content %>

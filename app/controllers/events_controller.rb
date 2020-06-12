@@ -1,8 +1,7 @@
 class EventsController < ApplicationController
   def create
-    @kid = User.find(params[:kid_id])
-    @babysit = Babysit.find_by(kid: @kid, user: current_user)
-    # @babysit = Babysit.find(params[:babysit_id])
+    @kid = Kid.find(params[:kid_id])
+    @babysit = current_user.babysits.find(@kid.id)
     @event = Event.new(event_params)
     @event.babysit = @babysit
     @event.save
