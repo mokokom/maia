@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/dashboard', to: 'pages#dashboard'
 
-  resources :events
   resources :kids, only: [:index, :create, :show, :edit, :update] do
     resources :babysits, only: [:index, :create, :show, :edit, :update]
   end
+  resources :events, only: [:create]
 end

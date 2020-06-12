@@ -4,7 +4,7 @@
   <div class="form-centered">
     <h2>Créer un event :</h2>
     <%= simple_form_for([babysit, event]) do |f| %>
-    <%= f.input :tag %>
+    <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
     <%= f.input :content %>
     <%= f.input :begin_event %>
     <%= f.input :end_event %>
