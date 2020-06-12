@@ -12,9 +12,9 @@
           class="fas fa-ellipsis-v"></i>
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Fiche enfant</a>
-        <a class="dropdown-item" href="#">Mon profil</a>
         <a class="dropdown-item" href="#">Paramètres</a>
+        <%=  link_to 'Mon profil', edit_user_registration_path, class: "dropdown-item"  %>
+        <%=  link_to 'Fiche enfants', kids_path, class: "dropdown-item" %>
       </div>
     </div>
 
