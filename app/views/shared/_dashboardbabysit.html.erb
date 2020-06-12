@@ -28,13 +28,5 @@
 
 
 
-<% @events.each do |event| %>
-<div>
-<p><%= event.tag %> - <%= event.babysit.kid.first_name %></p>
-<p><%= event.content %> </p>
-<p><%= event.begin_event %> </p>
- <p><%= event.end_event %> </p>
-<%= link_to 'Editer', edit_event_path(event) %>
-</div>
-<% end %>
+
 
