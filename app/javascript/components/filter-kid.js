@@ -7,6 +7,7 @@ const filterKidOnAvatarClick = () => {
         form.classList.add("d-none");
       });
       $(`#add-nounou-${e.target.id}`).toggleClass("d-none");
+      $(".add-kid-form").addClass("d-none");
     });
   });
 };

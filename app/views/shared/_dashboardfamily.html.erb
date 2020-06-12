@@ -7,14 +7,14 @@
     </div>
   </div>
   <% end %>
-  <div class="avatar-kids m-1">
+  <div class="avatar-kids-add m-1">
     <span class="add-kid">+</span>
   </div>
 </div>
 <% current_user.kids.each do |kid| %>
-<div id="add-nounou-kid-<%="#{kid.id}"%>" class="d-none nounou-form">
+<div id="add-nounou-kid-<%="#{kid.id}"%>" class="d-none nounou-form mt-3">
   <% if kid.babysits.empty? %>
-  <p>Ajouter une nounou à <%= kid.first_name %> </p>
+  <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
   <form action="/dashboard" class='form-inline'>
     <input type="text" name="email" placeholder="Email de la nounou">
     <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
@@ -55,7 +55,7 @@
 
 <% end %> -->
 
-<div class="form-container add-kid-form d-none mt-5">
+<div class="form-container add-kid-form d-none mt-3">
   <div class="form-centered">
     <h5>Ajouter un enfant à votre tableau de bord</h5>
     <%= simple_form_for(@kid) do |f| %>
