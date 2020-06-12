@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :kids, only: [:index, :create, :show, :edit, :update] do
     resources :babysits, only: [:index, :create, :show, :edit, :update] do
-      resources :events, only: [:create]
+      resources :events, only: [:create, :edit, :update]
     end
   end
 end

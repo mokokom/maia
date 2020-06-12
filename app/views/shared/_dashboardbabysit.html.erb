@@ -26,6 +26,13 @@
 <% end %>
 
 
+
 <% @events.each do |event| %>
-<%= event.tag %>
+<div>
+<p><%= event.tag %> - <%= event.babysit.kid.first_name %></p>
+<p><%= event.content %> </p>
+<p><%= event.begin_event %> </p>
+ <p><%= event.end_event %> </p>
+</div>
 <% end %>
+
