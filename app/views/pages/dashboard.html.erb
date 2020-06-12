@@ -8,8 +8,8 @@
             <h5 class="card-title">Bonjour <%= current_user.first_name %></h5>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
           </div>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <p class="card-text">Une nouvelle journée pour votre enfant!</p>
+          <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">carnet de liaison</button>
         </div>
       </div>
       <!-- </div> -->
@@ -27,12 +27,21 @@
       <% end %>
 
       <% else %>
-      <h2> mes kids</h2>
+      <h5> mes kids</h5>
       <% current_user.kids.each do |kid| %>
-      <div class="avatar-kids">
-        <%= kid.first_name %>
+      <div class="kids-box d-flex">
+        <div class="avatar-kids m-1">
+          <%= kid.first_name %>
+        </div>
+        <div class="avatar-kids m-1">
+          <span class="add-kid">+</span>
+        </div>
+        <!-- <div class="avatar-kids m-1">
+          <%= kid.first_name %>
+        </div> -->
 
       </div>
+
       <% kid.babysits.each do |babysit| %>
       <% if babysit.validated == false %>
       <p> en attente de validation</p>
@@ -45,7 +54,7 @@
 
       <form action="/dashboard" class='form-inline'>
         <input type="text" name="email" placeholder="Email de la nounou">
-        <input type="submit" value='chercher' class="btn btn-primary">
+        <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
       </form>
 
       <% if @result %>
@@ -65,7 +74,7 @@
       <br>
       <br>
 
-      <div class="form-container">
+      <div class="form-container d-none add-kid-form toggle-visibility">
         <div class="form-centered">
           <h2>Ajouter un enfant à votre tableau de bord</h2>
           <%= simple_form_for(@kid) do |f| %>

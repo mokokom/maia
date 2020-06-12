@@ -23,8 +23,10 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #ff8a8a;
+  // background-color: #ff8a8a;
+  box-shadow: 1px 1px 50px 1px rgba(7, 4, 4, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
+  color: grey;
 }
