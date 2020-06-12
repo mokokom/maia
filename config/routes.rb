@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
 
   resources :kids, only: [:index, :create, :show, :edit, :update] do
-    resources :babysits, only: [:create, :update]
+    resources :babysits, only: [:index, :create, :show, :edit, :update] do
+      resources :events, only: [:create]
+    end
   end
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
