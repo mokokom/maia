@@ -9,6 +9,7 @@ class EventsController < ApplicationController
     redirect_to dashboard_path
   end
 
+
   # def edit
   #   @event = Event.find(params[:id])
   # end
