@@ -13,11 +13,7 @@
         </div>
       </div>
       <!-- </div> -->
-      <p>****</p>
-      <p>menu</p>
-      <p><%=  link_to 'Mon profil(Editer)', edit_user_registration_path  %></p>
-      <p><%=  link_to 'Fiche profil enfants', kids_path %></p>
-      <p>****</p>
+
       <% if current_user.is_nanny %>
       <%= render 'shared/dashboardbabysit', babysit: @babysit, event: @event %>
       <% else %>
