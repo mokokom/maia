@@ -1,5 +1,28 @@
-<% if current_user.is_nanny %>
-  <%= render 'shared/dashboardbabysit', babysit: @babysit, event: @event %>
-<% else %>
-  <%= render 'shared/dashboardfamily' %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <!-- <div class="user-card"> -->
+      <div class="card my-3">
+        <div class="card-body">
+          <div class="profile-container d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title">Bonjour <%= current_user.first_name %></h5>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+          </div>
+          <p class="card-text">Une nouvelle journée pour votre enfant!</p>
+          <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">carnet de liaison</button>
+        </div>
+      </div>
+      <!-- </div> -->
+      <p>****</p>
+      <p>menu</p>
+      <p><%=  link_to 'Mon profil(Editer)', edit_user_registration_path  %></p>
+      <p><%=  link_to 'Fiche profil enfants', kids_path %></p>
+      <p>****</p>
+      <% if current_user.is_nanny %>
+      <%= render 'shared/dashboardbabysit', babysit: @babysit, event: @event %>
+      <% else %>
+      <%= render 'shared/dashboardfamily' %>
+      <% end %>
+    </div>
+  </div>
+</div>

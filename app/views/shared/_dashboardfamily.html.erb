@@ -1,31 +1,39 @@
 <h1>Bonjour <%= current_user.first_name %></h1>
-<br>
-<br>
-
-<p>****</p>
-<p>menu</p>
-<p><%=  link_to 'Mon profil(Editer)', edit_user_registration_path  %></p>
-<p><%=  link_to 'Fiche profil enfants', kids_path %></p>
-<p>****</p>
-
-<br>
-<br>
-
-<h2> mes kids</h2>
+<h5> mes kids</h5>
 <% current_user.kids.each do |kid| %>
-<%= kid.first_name %>
+<div class="kids-box d-flex">
+  <div class="avatar-kids m-1">
+    <%= kid.first_name %>
+  </div>
+  <div class="avatar-kids m-1">
+    <span class="add-kid">+</span>
+  </div>
+</div>
+<% kid.babysits.each do |babysit| %>
+<% if babysit.validated == false %>
+<p> en attente de validation</p>
+<% end %>
+<% end %>
 <% if kid.babysits.empty? %>
 <p>Ajouter une nounou à <%= kid.first_name %> </p>
-<p>Renseignez l'email de la nounou </p>
-<input type="text">
+<!-- <p>Renseignez l'email de la nounou </p> -->
+<form action="/dashboard" class='form-inline'>
+  <input type="text" name="email" placeholder="Email de la nounou">
+  <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
+</form>
+<% if @result %>
+<%= @result.first_name %>
+<%= form_for([kid, @babysit]) do |f| %>
+<%= f.hidden_field :user_id, value: @result.id %>
+<%= f.submit %>
+<% end %>
+<% end %>
 <% end %>
 <br>
 <% end %>
-
 <br>
 <br>
-
-<div class="form-container">
+<div class="form-container add-kid-form hidden visuallyhidden">
   <div class="form-centered">
     <h2>Ajouter un enfant à votre tableau de bord</h2>
     <%= simple_form_for(@kid) do |f| %>

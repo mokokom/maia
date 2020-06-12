@@ -13,5 +13,8 @@ class PagesController < ApplicationController
   def dashboard
     @kid = Kid.new
     @event = Event.new
+    @babysit = Babysit.new
+    email = params["email"]
+    @result = User.find_by(email: email)
   end
 end

@@ -1,5 +1,14 @@
 <h1>Bonjour <%= current_user.first_name %></h1>
-
+<% current_user.babysits.each do |babysit| %>
+<% if babysit.validated == false %>
+<p> <%=babysit.kid.first_name%> - en attente de validation
+  <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
+<i class="far fa-check-circle"></i></p>
+<% end %>
+<% else %>
+<p> <%=babysit.kid.first_name%> - validé!</p>
+<% end %>
+<% end %>
 <div class="form-container">
   <div class="form-centered">
     <h2>Créer un event :</h2>
