@@ -68,10 +68,12 @@ puts "Creating Users, Kids, Babysits and Events..."
 
 	babysit1 = Babysit.new(
 		begin_date: DateTime.now,
+    end_date: DateTime.now,
 		validated: true
 		)
 	babysit2 = Babysit.new(
 		begin_date: DateTime.now,
+    end_date: DateTime.now,
 		validated: false
 		)
 
