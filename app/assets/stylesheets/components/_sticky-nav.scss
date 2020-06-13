@@ -26,27 +26,27 @@
 
 @keyframes blinking {
   0% {
-    background-color: $activity-pink;
+    background-color: $activity-color;
     box-shadow: 1px 1px 20px $light-gray-opacity;
   }
   20% {
-    background-color: $sleep-blue;
+    background-color: $sleep-color;
     box-shadow: 1px 1px 20px $light-gray-opacity;
   }
   40% {
-    background-color: $eat-yellow;
+    background-color: $eat-color;
     box-shadow: 1px 1px 20px $light-gray-opacity;
   }
   60% {
-    background-color: $camera-cyan;
+    background-color: $camera-color;
     box-shadow: 1px 1px 20px $light-gray-opacity;
   }
   70% {
-    background-color: $diaper-green;
+    background-color: $diaper-color;
     box-shadow: 1px 1px 20px $light-gray-opacity;
   }
   100% {
-    background-color: $health-red;
+    background-color: $health-color;
     box-shadow: 1px 1px 20px $light-gray-opacity;
   }
 }
