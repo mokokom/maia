@@ -96,7 +96,12 @@
           <div class="d-flex justify-content-between">
             <span><%= event.babysit.kid.first_name %></span>
             <span><%= event.tag %></span>
-            <span><%= event.begin_event %> - <%= event.end_event %></span>
+            <span><%= event.begin_event.strftime("%A %Hh%M")%>
+              <% if event.end_event.nil? %>
+              <%= "" %> </span>
+            <% else %>
+            - <%= event.end_event.strftime("%A %Hh%M") %> </span>
+            <% end %>
           </div>
         </div>
         <div class="card-body">
@@ -125,11 +130,11 @@
 </div> -->
       <% end %>
 
-<% if current_user.is_nanny %>
-  <div class="sticky-bottom-nav position-sticky">
-    <%= link_to "+", new_event_path, class: "action-btn" %>
-  </div>
-<% end %>
+      <% if current_user.is_nanny %>
+      <div class="sticky-bottom-nav position-sticky">
+        <%= link_to "+", new_event_path, class: "action-btn" %>
+      </div>
+      <% end %>
 
     </div>
   </div>
