@@ -114,7 +114,10 @@
         </div>
         <% if current_user.is_nanny %>
         <div class="card-footer">
-          <%= link_to 'Editer', edit_event_path(event) %>
+          <%= link_to edit_event_path(event) do %>
+          <i class="far fa-edit"></i>
+          <% end %>
+
         </div>
         <% end %>
       </div>
