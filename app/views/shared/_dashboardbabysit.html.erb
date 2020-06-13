@@ -1,4 +1,5 @@
 <h1>Bonjour <%= current_user.first_name %></h1>
+
 <% current_user.babysits.each do |babysit| %>
 <% if babysit.validated == false %>
 <p> <%=babysit.kid.first_name%> - en attente de validation
@@ -7,12 +8,12 @@
 <% end %>
 <% else %>
 <p> <%=babysit.kid.first_name%> - validé!</p>
-<% end %>
-<% end %>
+
 <div class="form-container">
   <div class="form-centered">
     <h2>Créer un event :</h2>
-    <%= simple_form_for([babysit, event]) do |f| %>
+    <%= simple_form_for([babysit.kid, babysit, event]) do |f| %>
+    <%= f.hidden_field :kid_id, value: babysit.kid.id %>
     <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
     <%= f.input :content %>
     <%= f.input :begin_event %>
@@ -22,3 +23,10 @@
     <% end %>
   </div>
 </div>
+<% end %>
+<% end %>
+
+
+
+
+

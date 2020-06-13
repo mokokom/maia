@@ -16,5 +16,6 @@ class PagesController < ApplicationController
     @babysit = Babysit.new
     email = params["email"]
     @result = User.find_by(email: email)
+    @events = Event.all
   end
 end
