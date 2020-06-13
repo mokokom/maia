@@ -100,12 +100,12 @@ puts "Creating Users, Kids, Babysits and Events..."
 		begin_event: DateTime.now,
 		end_event: DateTime.now,
 		tag: "Activité",
-		content: "Jade à fait une belle peinture"
+		content: "Léo à fait une belle peinture"
 	)
 
 	event1.babysit = babysit1
 	event2.babysit = babysit1
-	event3.babysit = babysit2
+	event3.babysit = babysit1
 
 	event1.save
 	event2.save
