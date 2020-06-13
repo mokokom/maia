@@ -1,8 +1,6 @@
-<h1>Hello Edit</h1>
-
 <div class="form-container">
   <div class="form-centered">
-    <h2>Editer un event :</h2>
+    <h4>Modifier un event :</h4>
     <%= simple_form_for(@event) do |f| %>
     <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
     <%= f.input :content %>

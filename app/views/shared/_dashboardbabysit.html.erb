@@ -1,10 +1,17 @@
-<h1>Bonjour <%= current_user.first_name %></h1>
-
-<% current_user.babysits.each do |babysit| %>
-  <% if babysit.validated == false %>
-  <p> <%=babysit.kid.first_name%> - en attente de validation
-    <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
-  <i class="far fa-check-circle"></i></p>
+<h5> mes kids</h5>
+<div class="d-flex my-3">
+  <% current_user.babysits.each do |babysit| %>
+    <div class="kid-container">
+      <div id="kid-<%="#{@kid.id}"%>" class="avatar-kids m-1">
+        <%= babysit.kid.first_name %>
+      </div>
+        <% if babysit.validated == false %>
+          <p> en attente <br>de validation
+          <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
+            <i class="far fa-check-circle"></i></p>
+          <% end %>
+        <% end %>
+    </div>
   <% end %>
-   <% end %>
-<% end %>
+</div>
+
