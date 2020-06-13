@@ -125,10 +125,11 @@
 </div> -->
       <% end %>
 
-
-      <div class="sticky-bottom-nav position-sticky">
-        <%= link_to "+", dashboard_path, class: "action-btn" %>
-      </div>
+<% if current_user.is_nanny %>
+  <div class="sticky-bottom-nav position-sticky">
+    <%= link_to "+", new_event_path, class: "action-btn" %>
+  </div>
+<% end %>
 
     </div>
   </div>
