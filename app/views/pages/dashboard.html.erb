@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="card border-light mb-3" style="background-color: #a8e1ff">
+      <!-- <div class="card border-light mb-3" style="background-color: #a8e1ff">
         <div class="card-header">
           <div class="d-flex justify-content-between">
             <span>Lea</span>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="card-body">
-          <!-- <h5 class="card-title">Light card title</h5> -->
+          <h5 class="card-title">Light card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
           <span class="badge badge-pill badge-primary">belle sieste</span>
@@ -88,7 +88,42 @@
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
         </div>
+      </div> -->
+      <% @events.each do |event| %>
+
+      <div class="card border-light mb-3" style="background-color: #a8e1ff">
+        <div class="card-header">
+          <div class="d-flex justify-content-between">
+            <span><%= event.tag %> - <%= event.babysit.kid.first_name %></span>
+            <span>Dodo</span>
+            <span><%= event.begin_event %> - <%= event.end_event %></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Light card title</h5> -->
+          <p class="card-text"><%= event.content %> </p>
+          <span class="badge badge-pill badge-primary">belle sieste</span>
+          <span class="badge badge-pill badge-primary">belle sieste</span>
+          <span class="badge badge-pill badge-primary">belle sieste</span>
+          <span class="badge badge-pill badge-primary">belle sieste</span>
+        </div>
+        <div class="card-footer">
+          <% if current_user.is_nanny %>
+          <%= link_to 'Editer', edit_event_path(event) %>
+          <% end %>
+        </div>
       </div>
+
+      <!-- <div>
+  <p><%= event.tag %> - <%= event.babysit.kid.first_name %></p>
+  <p><%= event.content %> </p>
+  <p><%= event.begin_event %> </p>
+  <p><%= event.end_event %> </p>
+  <% if current_user.is_nanny %>
+  <%= link_to 'Editer', edit_event_path(event) %>
+  <% end %>
+</div> -->
+      <% end %>
 
 
       <div class="sticky-bottom-nav position-sticky">
@@ -97,17 +132,4 @@
 
     </div>
   </div>
-</div>
-
-
-<% @events.each do |event| %>
-<div>
-  <p><%= event.tag %> - <%= event.babysit.kid.first_name %></p>
-  <p><%= event.content %> </p>
-  <p><%= event.begin_event %> </p>
-  <p><%= event.end_event %> </p>
-  <% if current_user.is_nanny %>
-  <%= link_to 'Editer', edit_event_path(event) %>
-  <% end %>
-  <% end %>
 </div>
