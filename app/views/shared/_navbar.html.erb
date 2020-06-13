@@ -8,9 +8,8 @@
         class="fas fa-ellipsis-v"></i>
     </button>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Fiche enfant</a>
-      <a class="dropdown-item" href="#">Mon profil</a>
-      <a class="dropdown-item" href="#">Paramètres</a>
+      <%= link_to "Mes Kids", kids_path, class: "dropdown-item" %>
+      <%= link_to "Mon Profil", edit_user_registration_path, class: "dropdown-item" %>
       <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
     </div>
