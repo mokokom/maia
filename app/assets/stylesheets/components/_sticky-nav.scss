@@ -1,7 +1,6 @@
 .sticky-bottom-nav {
   height: 70px;
-  // background: grey;
-  bottom: 0;
+  bottom: 20px;
 }
 
 .action-btn {
@@ -14,18 +13,40 @@
   justify-content: center;
   align-items: center;
   color: black;
+  background-color: red;
+  animation: blinking 20500ms infinite ease-in-out;
 }
 
 .tags-container {
   position: -webkit-sticky;
   position: sticky;
-  top: 2rem;
+  top: 3rem;
   z-index: 100;
-  // background-color: blanchedalmond;
 }
-// .tags-container {
-//   position: static;
-//   top: 0;
-//   width: 100%;
-//   z-index: 100;
-// }
+
+@keyframes blinking {
+  0% {
+    background-color: $activity-pink;
+    box-shadow: 0px 0px 15px 0px $activity-pink;
+  }
+  20% {
+    background-color: $sleep-blue;
+    box-shadow: 0px 0px 15px 0px $sleep-blue;
+  }
+  40% {
+    background-color: $eat-yellow;
+    box-shadow: 0px 0px 15px 0px $eat-yellow;
+  }
+  60% {
+    background-color: $camera-cyan;
+    box-shadow: 0px 0px 15px 0px $camera-cyan;
+  }
+  70% {
+    background-color: $diaper-green;
+    box-shadow: 0px 0px 15px 0px $diaper-green;
+  }
+  100% {
+    background-color: $health-red;
+    box-shadow: 0px 0px 15px 0px $health-red;
+  }
+}
