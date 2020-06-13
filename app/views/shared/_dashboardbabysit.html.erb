@@ -1,32 +1,10 @@
 <h1>Bonjour <%= current_user.first_name %></h1>
 
 <% current_user.babysits.each do |babysit| %>
-<% if babysit.validated == false %>
-<p> <%=babysit.kid.first_name%> - en attente de validation
-  <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
-<i class="far fa-check-circle"></i></p>
+  <% if babysit.validated == false %>
+  <p> <%=babysit.kid.first_name%> - en attente de validation
+    <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
+  <i class="far fa-check-circle"></i></p>
+  <% end %>
+   <% end %>
 <% end %>
-<% else %>
-<p> <%=babysit.kid.first_name%> - validé!</p>
-
-<div class="form-container">
-  <div class="form-centered">
-    <h2>Créer un event :</h2>
-    <%= simple_form_for([babysit.kid, babysit, event]) do |f| %>
-    <%= f.hidden_field :kid_id, value: babysit.kid.id %>
-    <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
-    <%= f.input :content %>
-    <%= f.input :begin_event %>
-    <%= f.input :end_event %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit  %>
-    <% end %>
-  </div>
-</div>
-<% end %>
-<% end %>
-
-
-
-
-

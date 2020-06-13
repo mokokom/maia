@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  def new
+    @event = Event.new
+  end
+
   def create
     @kid = Kid.find(params[:kid_id])
     @babysit = current_user.babysits.find(@kid.id)
