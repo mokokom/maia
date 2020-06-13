@@ -111,6 +111,9 @@
         <div class="card-footer">
           <%= link_to 'Editer', edit_event_path(event) %>
         </div>
+         <% if @event.photo.attached? %>
+            <span><%= cl_image_tag @event.photo.key, height: 100, width: 100, crop: :fill %></span>
+          <% end %>
         <% end %>
       </div>
 
