@@ -24,6 +24,7 @@ require("channels");
 import "bootstrap";
 import { toggleAddKidForm } from "../components/add-kid";
 import { filterKidOnAvatarClick } from "../components/filter-kid";
+import { stickyTagContainerOnScroll } from "../components/tags-container";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -32,4 +33,5 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   toggleAddKidForm();
   filterKidOnAvatarClick();
+  stickyTagContainerOnScroll();
 });

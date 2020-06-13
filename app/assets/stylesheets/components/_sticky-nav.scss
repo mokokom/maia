@@ -15,3 +15,17 @@
   align-items: center;
   color: black;
 }
+
+.tags-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2rem;
+  z-index: 100;
+  // background-color: blanchedalmond;
+}
+// .tags-container {
+//   position: static;
+//   top: 0;
+//   width: 100%;
+//   z-index: 100;
+// }
