@@ -1,0 +1,52 @@
+.sticky-bottom-nav {
+  height: 70px;
+  bottom: 20px;
+}
+
+.action-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: red;
+  animation: blinking 20500ms infinite ease-in-out;
+}
+
+.tags-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3rem;
+  z-index: 100;
+}
+
+@keyframes blinking {
+  0% {
+    background-color: $activity-pink;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  20% {
+    background-color: $sleep-blue;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  40% {
+    background-color: $eat-yellow;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  60% {
+    background-color: $camera-cyan;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  70% {
+    background-color: $diaper-green;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  100% {
+    background-color: $health-red;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+}

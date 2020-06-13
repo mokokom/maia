@@ -2,16 +2,14 @@
   justify-content: space-between;
   background: transparent;
   color: $light-gray;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .light-gray {
   color: $light-gray;
 }
-
-// .navbar-lewagon-logout {
-//   justify-content: space-between;
-//   background: $light-pink;
-// }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -41,7 +39,6 @@
 .new-session {
   background-color: $light-pink;
 }
-
 
 @media screen and (min-width: 576px) {
   .btn-navbar-right {
