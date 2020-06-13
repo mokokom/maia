@@ -111,6 +111,7 @@ puts "Creating Users, Kids, Babysits and Events..."
 
 
 puts "Finished!"
-puts "#{User.count} items created"
-puts "#{Babysit.count} users created"
-puts "#{Event.count} users created"
+puts "#{User.count} users created"
+puts "#{Kid.count} kids created"
+puts "#{Babysit.count} babysit created"
+puts "#{Event.count} event created"

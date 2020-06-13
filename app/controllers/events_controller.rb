@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def create
     @kid = Kid.find(params[:kid_id])
-    @babysit = current_user.babysits.find(@kid.id)
+    @babysit = current_user.babysits.find(params[:babysit_id])
     @event = Event.new(event_params)
     @event.babysit = @babysit
     @event.save
@@ -25,6 +25,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def event_params
     params.require(:event).permit(:tag, :content, :begin_event, :end_event, :photo)
   end
