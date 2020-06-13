@@ -91,7 +91,7 @@
       </div> -->
       <% @events.each do |event| %>
 
-      <div class="card border-light mb-3" style="background-color: #a8e1ff">
+      <div class="card border-light mb-3 <%= event.tag.downcase %>-color">
         <div class="card-header">
           <div class="d-flex justify-content-between">
             <span><%= event.babysit.kid.first_name %></span>
@@ -107,11 +107,11 @@
           <span class="badge badge-pill badge-primary">belle sieste</span>
           <span class="badge badge-pill badge-primary">belle sieste</span>
         </div>
+        <% if current_user.is_nanny %>
         <div class="card-footer">
-          <% if current_user.is_nanny %>
           <%= link_to 'Editer', edit_event_path(event) %>
-          <% end %>
         </div>
+        <% end %>
       </div>
 
       <!-- <div>

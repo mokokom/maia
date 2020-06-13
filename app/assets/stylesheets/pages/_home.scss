@@ -41,41 +41,41 @@
   top: 6vh;
   left: 10vw;
   transform: rotate(45deg);
-  background-color: $eat-yellow;
+  background-color: $eat-color;
 }
 
 .icon-box.sleep {
   top: 30vh;
   left: 9vw;
   transform: rotate(-25deg);
-  background-color: $sleep-blue;
+  background-color: $sleep-color;
 }
 
 .icon-box.activity {
   top: 25vh;
   left: 40vw;
   transform: rotate(40deg);
-  background-color: $activity-pink;
+  background-color: $activity-color;
 }
 
 .icon-box.camera {
   top: 10vh;
   left: 35vw;
   transform: rotate(-25deg);
-  background-color: $camera-cyan;
+  background-color: $camera-color;
 }
 
 .icon-box.diaper {
   top: 30vh;
   right: 10vw;
   transform: rotate(25deg);
-  background-color: $diaper-green;
+  background-color: $diaper-color;
 }
 
 .icon-box.health {
   position: relative;
   top: 5vh;
   left: 65vw;
-  background-color: $health-red;
+  background-color: $health-color;
   transform: rotate(7deg);
 }
