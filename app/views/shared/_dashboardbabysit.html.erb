@@ -62,11 +62,13 @@
       <%= link_to edit_event_path(event) do %>
       <i class="far fa-edit"></i>
       <% end %>
-
     </div>
     <% end %>
   </div>
   <% end %>
+  <div class="sticky-bottom-nav position-sticky">
+    <%= link_to "+", new_event_path, class: "action-btn" %>
+  </div>
   <% end %>
 </div>
 <% end %>
