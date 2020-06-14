@@ -1,57 +1,51 @@
 <h5> mes kids</h5>
 <div class="d-flex my-3">
   <% current_user.kids.each do |kid| %>
-  <div class="kid-container">
-    <div id="kid-<%="#{kid.id}"%>" class="avatar-kids m-1">
-      <%= kid.first_name %>
+    <div class="kid-container">
+      <div id="kid-<%="#{kid.id}"%>" class="avatar-kids m-1">
+        <%= kid.first_name %>
+      </div>
     </div>
-  </div>
   <% end %>
   <div class="avatar-kids-add m-1">
     <span class="add-kid">+</span>
   </div>
 </div>
-
 <%# Create a container with kid id to conditionnaly show it depending on kid avatar clicked %>
 <% current_user.kids.each do |kid| %>
-<div id="kid-<%="#{kid.id}-container"%>" class="d-none nounou-form mt-3">
-  <% kid.babysits.each do |babysit| %>
-
-  <% if babysit.validated == false %>
-  <p> en attente de validation</p>
-
-  <% elsif babysit.validated == true %>
-  <%= render "shared/kid-card", babysit: babysit%>
-  <% end %>
-  <% end %>
-
-  <% if kid.babysits.empty? %>
-  <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
-  <form action="/dashboard" class='form-inline justify-content-between'>
-    <input type="text" name="email" placeholder="Email de la nounou">
-    <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
-  </form>
-  <% end %>
-
-  <% if @result %>
-  <%= @result.first_name %>
-  <%= form_for([kid, @babysit]) do |f| %>
-  <%= f.hidden_field :user_id, value: @result.id %>
-  <%= f.submit %>
-  <% end %>
-  <% end %>
-</div>
+  <div id="kid-<%="#{kid.id}-container"%>" class="d-none nounou-form mt-3">
+    <% kid.babysits.each do |babysit| %>
+      <% if babysit.validated == false %>
+        <p> en attente de validation</p>
+      <% elsif babysit.validated == true %>
+        <%= render "shared/kid-card", babysit: babysit%>
+      <% end %>
+    <% end %>
+    <% if kid.babysits.empty? %>
+      <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
+      <form action="/dashboard" class='form-inline justify-content-between'>
+        <input type="text" name="email" placeholder="Email de la nounou">
+        <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
+      </form>
+      <% if @result %>
+        <%= @result.first_name %>
+        <%= form_for([kid, @babysit]) do |f| %>
+          <%= f.hidden_field :user_id, value: @result.id %>
+          <%= f.submit %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
-
 <div class="form-container add-kid-form d-none mt-3">
   <div class="form-centered text-center">
     <h5>Ajouter un enfant à votre tableau de bord</h5>
     <%= simple_form_for(@kid) do |f| %>
-    <%= f.input :first_name, label: false, placeholder: "Prénom", input_html: { class: 'bg-white' } %>
-    <%= f.input :age, label: false, placeholder: "Age", input_html: { class: 'bg-white' } %>
-    <%= f.input :weight, label: false, placeholder: "Poids", input_html: { class: 'bg-white' } %>
-    <%= f.input :photo, as: :file, label: false, input_html: { class: 'bg-white' } %>
-    <%= f.button :submit, value: "Valider", class: "shadow-sm py-1 px-3 bg-white rounded-pill border-0"  %>
+      <%= f.input :first_name, label: false, placeholder: "Prénom", input_html: { class: 'bg-white' } %>
+      <%= f.input :age, label: false, placeholder: "Age", input_html: { class: 'bg-white' } %>
+      <%= f.input :weight, label: false, placeholder: "Poids", input_html: { class: 'bg-white' } %>
+      <%= f.input :photo, as: :file, label: false, input_html: { class: 'bg-white' } %>
+      <%= f.button :submit, value: "Valider", class: "shadow-sm py-1 px-3 bg-white rounded-pill border-0"  %>
     <% end %>
   </div>
 </div>
