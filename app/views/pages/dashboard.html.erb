@@ -95,7 +95,11 @@
         <div class="card-header">
           <div class="d-flex justify-content-between">
             <span><%= event.babysit.kid.first_name %></span>
-            <span><%= event.tag %></span>
+              <% if event.title != '' %>
+                  <span><%= event.title %></span>
+                <% else %>
+                  <span><%= event.tag %></span>
+              <% end %>
             <span><%= event.begin_event.strftime("%A %Hh%M")%>
               <% if event.end_event.nil? %>
               <%= "" %> </span>
@@ -107,7 +111,7 @@
         <div class="card-body">
           <!-- <h5 class="card-title">Light card title</h5> -->
           <p class="card-text"><%= event.content %> </p>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
+          <span class="badge badge-pill badge-primary"><%= event.badge%></span>
           <span class="badge badge-pill badge-primary">belle sieste</span>
           <span class="badge badge-pill badge-primary">belle sieste</span>
           <span class="badge badge-pill badge-primary">belle sieste</span>
