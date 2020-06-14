@@ -3,10 +3,13 @@ const filterKidOnAvatarClick = () => {
   const nounouForms = document.querySelectorAll(".nounou-form");
   avatarKids.forEach(kid => {
     kid.addEventListener("click", e => {
+      console.log("clicknan");
+
       nounouForms.forEach(form => {
         form.classList.add("d-none");
       });
-      $(`#add-nounou-${e.target.id}`).toggleClass("d-none");
+      console.log(`#${e.target.id}-container`);
+      $(`#${e.target.id}-container`).toggleClass("d-none");
       $(".add-kid-form").addClass("d-none");
     });
   });

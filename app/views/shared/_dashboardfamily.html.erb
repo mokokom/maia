@@ -12,7 +12,7 @@
   </div>
 </div>
 <% current_user.kids.each do |kid| %>
-<div id="add-nounou-kid-<%="#{kid.id}"%>" class="d-none nounou-form mt-3">
+<div id="kid-<%="#{kid.id}-container"%>" class="d-none nounou-form mt-3">
   <% kid.babysits.each do |babysit| %>
   <% if babysit.validated == false %>
   <p> en attente de validation</p>
