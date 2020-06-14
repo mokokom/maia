@@ -1,0 +1,53 @@
+<div class="tags-container my-3 d-flex justify-content-center">
+	<div class="tag-box vegetable m-1">
+		<%= image_tag("vegetable.png") %>
+	</div>
+	<div class="tag-box sleep m-1">
+		<%= image_tag("sleep.png") %>
+	</div>
+	<div class="tag-box activity m-1">
+		<%= image_tag("activity.png") %>
+	</div>
+	<div class="tag-box camera m-1">
+		<%= image_tag("camera.png") %>
+	</div>
+	<div class="tag-box diaper m-1">
+		<%= image_tag("diaper.png") %>
+	</div>
+	<div class="tag-box health m-1">
+		<%= image_tag("health.png") %>
+	</div>
+</div>
+<% @events.each do |event| %>
+<% if(event.babysit.kid_id == babysit.kid_id) %>
+<div id="kid-<%="#{babysit.kid_id}-card"%>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
+	<div class="card-header">
+		<div class="d-flex justify-content-between">
+			<span><%= event.babysit.kid.first_name %></span>
+			<% if event.title.nil? %>
+			<span><%= event.tag %></span>
+			<% else %>
+			<span><%= event.title %></span>
+			<% end %>
+			<span><%= event.begin_event.strftime("%A %Hh%M")%>
+				<% if event.end_event.nil? %>
+				<%= "" %> </span>
+			<% else %>
+			- <%= event.end_event.strftime("%Hh%M") %> </span>
+			<% end %>
+		</div>
+	</div>
+	<div class="card-body">
+		<p class="card-text"><%= event.content %> </p>
+		<span class="badge badge-pill badge-primary"><%= event.badge%></span>
+	</div>
+	<% if current_user.is_nanny %>
+	<div class="card-footer">
+		<%= link_to edit_event_path(event) do %>
+		<i class="far fa-edit"></i>
+		<% end %>
+	</div>
+	<% end %>
+</div>
+<% end %>
+<% end %>

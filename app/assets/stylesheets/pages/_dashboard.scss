@@ -1,3 +1,37 @@
 .dashboard {
-	background-color: white;
+  background-color: white;
+}
+
+.active-kid {
+  border: 3px solid $activity-color;
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
+  animation: blinking 20500ms infinite ease-in-out;
+}
+
+@keyframes blinking {
+  0% {
+    border-color: $activity-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  20% {
+    border-color: $sleep-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  40% {
+    border-color: $eat-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  60% {
+    border-color: $camera-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  70% {
+    border-color: $diaper-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  100% {
+    border-color: $health-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
 }
