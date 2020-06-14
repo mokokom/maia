@@ -7,14 +7,66 @@
     </div>
   </div>
   <% end %>
-  <% current_user.babysits.each do |babysit| %>
-  <div id="kid-<%="#{babysit.kid_id}-container"%>" class="d-none nounou-form mt-3">
-    <% if babysit.validated == false %>
-    <p> en attente <br>de validation
-      <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
-      <i class="far fa-check-circle"></i></p>
-    <% end %>
+</div>
+<% current_user.babysits.each do |babysit| %>
+<div id="kid-<%="#{babysit.kid_id}-container"%>" class="d-none nounou-form mt-3">
+  <% if babysit.validated == false %>
+  <p> en attente <br>de validation
+    <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
+    <i class="far fa-check-circle"></i></p>
+  <% end %>
+  <% elsif babysit.validated == true %>
+  <div class="tags-container my-3 d-flex justify-content-center">
+    <div class="tag-box vegetable m-1">
+      <%= image_tag("vegetable.png") %>
+    </div>
+    <div class="tag-box sleep m-1">
+      <%= image_tag("sleep.png") %>
+    </div>
+    <div class="tag-box activity m-1">
+      <%= image_tag("activity.png") %>
+    </div>
+    <div class="tag-box camera m-1">
+      <%= image_tag("camera.png") %>
+    </div>
+    <div class="tag-box diaper m-1">
+      <%= image_tag("diaper.png") %>
+    </div>
+    <div class="tag-box health m-1">
+      <%= image_tag("health.png") %>
+    </div>
+  </div>
+  <% @events.each do |event| %>
+  <div id="kid-<%="#{babysit.kid_id}-container"%>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
+    <div class="card-header">
+      <div class="d-flex justify-content-between">
+        <span><%= event.babysit.kid.first_name %></span>
+        <span><%= event.tag %></span>
+        <span><%= event.begin_event.strftime("%A %Hh%M")%>
+          <% if event.end_event.nil? %>
+          <%= "" %> </span>
+        <% else %>
+        - <%= event.end_event.strftime("%Hh%M") %> </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= event.content %> </p>
+      <span class="badge badge-pill badge-primary">belle sieste</span>
+      <span class="badge badge-pill badge-primary">belle sieste</span>
+      <span class="badge badge-pill badge-primary">belle sieste</span>
+      <span class="badge badge-pill badge-primary">belle sieste</span>
+    </div>
+    <% if current_user.is_nanny %>
+    <div class="card-footer">
+      <%= link_to edit_event_path(event) do %>
+      <i class="far fa-edit"></i>
+      <% end %>
+
+    </div>
     <% end %>
   </div>
   <% end %>
+  <% end %>
 </div>
+<% end %>

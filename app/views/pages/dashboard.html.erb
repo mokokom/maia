@@ -18,7 +18,7 @@
       <%= render 'shared/dashboardfamily' %>
       <% end %>
 
-      <div class="tags-container my-3 d-flex justify-content-center">
+      <!-- <div class="tags-container my-3 d-flex justify-content-center">
         <div class="tag-box vegetable m-1">
           <%= image_tag("vegetable.png") %>
         </div>
@@ -37,101 +37,41 @@
         <div class="tag-box health m-1">
           <%= image_tag("health.png") %>
         </div>
-      </div>
-
-      <!-- <div class="card border-light mb-3" style="background-color: #a8e1ff">
-        <div class="card-header">
-          <div class="d-flex justify-content-between">
-            <span>Lea</span>
-            <span>Dodo</span>
-            <span>10h-12h</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Light card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-        </div>
-      </div>
-      <div class="card border-light mb-3" style="background-color: #fffdca">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h5 class="card-title">Light card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
-      </div>
-      <div class="card border-light mb-3" style="background-color: #ffd8d8">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h5 class="card-title">Light card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
-      </div>
-      <div class="card border-light mb-3" style="background-color: #c8eacd">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h5 class="card-title">Light card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
-      </div>
-      <div class="card border-light mb-3" style="border: 1px solid #b5efe8">
-        <div class="card-header" style="background-color: #b5efe8">Header</div>
-        <div class="card-body">
-          <h5 class="card-title">Light card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
       </div> -->
-      <% @events.each do |event| %>
 
-      <div class="card border-light mb-3 <%= event.tag.downcase %>-color">
-        <div class="card-header">
-          <div class="d-flex justify-content-between">
-            <span><%= event.babysit.kid.first_name %></span>
-            <span><%= event.tag %></span>
-            <span><%= event.begin_event.strftime("%A %Hh%M")%>
-              <% if event.end_event.nil? %>
-              <%= "" %> </span>
-            <% else %>
-            - <%= event.end_event.strftime("%Hh%M") %> </span>
-            <% end %>
+      <!-- <% @events.each do |event| %>
+
+        <div class="card border-light mb-3 <%= event.tag.downcase %>-color">
+          <div class="card-header">
+            <div class="d-flex justify-content-between">
+              <span><%= event.babysit.kid.first_name %></span>
+              <span><%= event.tag %></span>
+              <span><%= event.begin_event.strftime("%A %Hh%M")%>
+                <% if event.end_event.nil? %>
+                <%= "" %> </span>
+              <% else %>
+              - <%= event.end_event.strftime("%Hh%M") %> </span>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="card-body">
-          <!-- <h5 class="card-title">Light card title</h5> -->
-          <p class="card-text"><%= event.content %> </p>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-          <span class="badge badge-pill badge-primary">belle sieste</span>
-        </div>
-        <% if current_user.is_nanny %>
-        <div class="card-footer">
-          <%= link_to edit_event_path(event) do %>
-          <i class="far fa-edit"></i>
+          <div class="card-body">
+            <p class="card-text"><%= event.content %> </p>
+            <span class="badge badge-pill badge-primary">belle sieste</span>
+            <span class="badge badge-pill badge-primary">belle sieste</span>
+            <span class="badge badge-pill badge-primary">belle sieste</span>
+            <span class="badge badge-pill badge-primary">belle sieste</span>
+          </div>
+          <% if current_user.is_nanny %>
+          <div class="card-footer">
+            <%= link_to edit_event_path(event) do %>
+            <i class="far fa-edit"></i>
+            <% end %>
+
+          </div>
           <% end %>
-
         </div>
-        <% end %>
-      </div>
 
-      <!-- <div>
-  <p><%= event.tag %> - <%= event.babysit.kid.first_name %></p>
-  <p><%= event.content %> </p>
-  <p><%= event.begin_event %> </p>
-  <p><%= event.end_event %> </p>
-  <% if current_user.is_nanny %>
-  <%= link_to 'Editer', edit_event_path(event) %>
-  <% end %>
-</div> -->
-      <% end %>
+      <% end %> -->
 
       <% if current_user.is_nanny %>
       <div class="sticky-bottom-nav position-sticky">
