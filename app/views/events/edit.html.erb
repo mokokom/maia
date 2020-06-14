@@ -3,7 +3,9 @@
     <h4>Modifier un event :</h4>
     <%= simple_form_for(@event) do |f| %>
     <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
+    <%= f.input :title %>
     <%= f.input :content %>
+    <%= f.input :badge %>
     <%= f.input :begin_event %>
     <%= f.input :end_event %>
     <%= f.input :photo, as: :file %>
