@@ -3,5 +3,5 @@ class Event < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :tag, :content, :begin_event, :end_event, presence: true
+  validates :tag, :content, :begin_event, presence: true
 end
