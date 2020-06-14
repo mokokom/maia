@@ -8,7 +8,8 @@ const filterKidOnAvatarClick = () => {
       nounouForms.forEach(form => {
         form.classList.add("d-none");
       });
-      $(`#add-nounou-${e.target.id}`).toggleClass("d-none");
+      console.log(`#${e.target.id}-container`);
+      $(`#${e.target.id}-container`).toggleClass("d-none");
       $(".add-kid-form").addClass("d-none");
     });
   });
