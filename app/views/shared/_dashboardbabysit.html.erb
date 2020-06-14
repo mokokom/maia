@@ -37,7 +37,8 @@
     </div>
   </div>
   <% @events.each do |event| %>
-  <div id="kid-<%="#{babysit.kid_id}-container"%>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
+  <% if(event.babysit.kid_id == babysit.kid_id) %>
+  <div id="kid-<%="#{babysit.kid_id}-card"%>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
     <div class="card-header">
       <div class="d-flex justify-content-between">
         <span><%= event.babysit.kid.first_name %></span>
@@ -65,6 +66,7 @@
     </div>
     <% end %>
   </div>
+  <% end %>
   <% end %>
   <div class="sticky-bottom-nav position-sticky">
     <%= link_to "+", new_event_path, class: "action-btn" %>
