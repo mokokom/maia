@@ -22,7 +22,7 @@
     <%= f.input :badge %>
     <%= f.input :content %>
     <%= f.input :begin_event, discard_year: true, discard_month: true %>
-    <%= f.input :end_event %>
+    <%= f.input :end_event, discard_year: true, discard_month: true %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit  %>
     <% end %>

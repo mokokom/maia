@@ -9,9 +9,8 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <p>Vous êtes..</p>
-        <%= f.collection_radio_buttons :is_nanny, [[true, 'Nounou'], [false, 'Parent']], :first, :last%>
-
+        <p>Vous êtes..
+        <%= f.collection_select :is_nanny, [[true, 'Nounou'], [false, 'Parent']], :first, :last %></p>
         <%= f.input :first_name,
                 label: false,
                 placeholder: "Prénom",
