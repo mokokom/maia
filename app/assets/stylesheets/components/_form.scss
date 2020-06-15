@@ -16,6 +16,48 @@
   position: relative;
 }
 
+.col-form-label {
+  display: none;
+}
+
+.tags-new-event {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.create-event-btn {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  height: 50px;
+  padding: 10px;
+}
+
+.time-event {
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.info-badge {
+  font-size: 10px;
+}
+
+#event_tag_repas, #event_tag_dodo, #event_tag_change, #event_tag_activité, #event_tag_santé, #event_tag_photo {
+    width: 50px;
+    height: 50px;
+    padding: 7px;
+    border-radius: 16px;
+}
+
+#event_tag_repas {
+  background-color: red;
+}
+
 .underline-title:before {
   content: "";
   position: absolute;
