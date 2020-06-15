@@ -13,7 +13,7 @@
 <div id="kid-<%="#{babysit.kid_id}-container"%>" class="d-none nounou-form mt-3">
 
   <% if babysit.validated == false %>
-  <p> en attente de validation
+  <p class='infos-request'> La demande de <%= babysit.kid.first_name %> <br> est en attente confirmation de votre part <br>
     <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
     <i class="far fa-check-circle"></i></p>
   <% end %>
