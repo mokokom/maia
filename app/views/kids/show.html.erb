@@ -18,9 +18,9 @@
  <% end %>
 
  <div class="card-profil">
-<p class="category-profil">Nom</p>
-<p class="font-weight-bold"><%= @kid.first_name %></p>
 <p class="category-profil">Prénom</p>
+<p class="font-weight-bold"><%= @kid.first_name %></p>
+<p class="category-profil">Nom</p>
 <p class="font-weight-bold"><%=@kid.parent.last_name%></p>
 <br>
 <p class="category-profil">Age</p>
@@ -54,13 +54,19 @@
 <br>
 
 <% if current_user.is_nanny == false  %>
-<p>Profil nounou</p>
-<% @kid.babysits.each do |babysit|%>
-  <p><%= babysit.nanny.first_name %></p>
-  <p><%= babysit.nanny.last_name %></p>
-  <p>email:<%= babysit.nanny.email %></p>
-  <p>adresse:<%= babysit.nanny.address %></p>
-  <p>téléphone:<%= babysit.nanny.phone_number %></p>
+<br>
+<p><% @kid.babysits.each do |babysit|%></p>
+  <p class="category-profil">Prénom</p>
+  <p class="font-weight-bold"><%= babysit.nanny.first_name %></p>
+  <p class="category-profil">Nom</p>
+  <p class="font-weight-bold" ><%= babysit.nanny.last_name %></p>
+  <br>
+  <br>
+  <p class="font-weight-bold">Email:<%= babysit.nanny.email %></p>
+  <br>
+  <p class="font-weight-bold">Adresse:<%= babysit.nanny.address %></p>
+  <br>
+  <p class="font-weight-bold">Téléphone:<%= babysit.nanny.phone_number %></p>
 <% end %>
 
 <% end %>
