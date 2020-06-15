@@ -2,11 +2,7 @@
   <div class="form-centered">
     <h2>Ajouter un enfant à votre tableau de bord</h2>
 
-
-<% if @kid.photo.attached? %>
-  <%= cl_image_tag @kid.photo.key, crop: :file, gravity: :face %>
-<% end %>
-
+    <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face %>
 
     <h2>Editer le profil</h2>
     <%= simple_form_for(@kid) do |f| %>

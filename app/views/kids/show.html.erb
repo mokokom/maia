@@ -2,6 +2,9 @@
 
 <%= link_to 'Editer le profil', edit_kid_path(@kid)%>
 
+<br>
+<%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face %>
+
 <p><%= @kid.first_name %></p>
 <p><%=@kid.parent.last_name%></p>
 
