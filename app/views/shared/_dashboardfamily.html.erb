@@ -16,22 +16,27 @@
   <div id="kid-<%="#{kid.id}-container"%>" class="d-none nounou-form mt-3">
     <% kid.babysits.each do |babysit| %>
       <% if babysit.validated == false %>
-        <p> en attente de validation</p>
+        <p class="info-add-nanny"> La demande de <%= kid.first_name%> est en attente de validation</p>
       <% elsif babysit.validated == true %>
         <%= render "shared/kid-card", babysit: babysit%>
       <% end %>
     <% end %>
     <% if kid.babysits.empty? %>
-      <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
-      <form action="/dashboard" class='form-inline justify-content-between'>
+      <p class="info-add-nanny">Ajout d'une nounou à <%= kid.first_name.capitalize %> </p>
+      <form action="/dashboard" class='form-inline justify-content-around'>
         <input type="text" name="email" placeholder="Email de la nounou">
         <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
       </form>
       <% if @result %>
-        <%= @result.first_name %>
+      <p class="info-result-nanny">resultats...</p>
+      <div class="result-search-nanny">
+        <p><%= @result.first_name %> <%= @result.last_name %></p>
+        <p><%= @result.address %></p>
+        <p><%= @result.phone_number %></p>
         <%= form_for([kid, @babysit]) do |f| %>
           <%= f.hidden_field :user_id, value: @result.id %>
           <%= f.submit %>
+      </div>
         <% end %>
       <% end %>
     <% end %>
