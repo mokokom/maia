@@ -6,10 +6,11 @@
     <%= f.input :title %>
     <%= f.input :badge %>
     <%= f.input :content %>
-    <%= f.input :begin_event %>
+    <%= f.input :begin_event, discard_year: true, discard_month: true %>
     <%= f.input :end_event %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit  %>
     <% end %>
   </div>
 </div>
+

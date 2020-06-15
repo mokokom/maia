@@ -10,18 +10,24 @@
 
       <div class="form-inputs">
 
+        <%= f.collection_radio_buttons :is_nanny, [[true, 'nounou'], [false, 'famille']], :first, :last%>
 
-        <!-- <%= f.input :is_nanny, as: :boolean,
-                required: true %>
-    <%= f.input :first_name,
-                required: true %>
-    <%= f.input :last_name,
-                required: true %>
-    <%= f.input :email %>
+        <%= f.input :first_name,
+                label: false,
+                placeholder: "Prénom",
 
-        <%= f.input :is_nanny, as: :boolean, label: false,
-                required: true %> -->
-        <%= f.input :is_nanny, label: false, default: 1, collection: ["nounou", "famille"] %>
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Prénom" }%>
+
+        <%= f.input :last_name,
+                label: false,
+                placeholder: "Nom",
+
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Nom" }%>
+
         <%= f.input :email,
                 label: false,
                 placeholder: "email",
