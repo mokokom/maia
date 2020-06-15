@@ -1,12 +1,12 @@
 class User < ApplicationRecord
+  has_one_attached :photo
+
   has_many :kids, dependent: :destroy
   has_many :babysits
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  has_one_attached :photo
 
   validates_inclusion_of :is_nanny, in: [true, false]
   validates :phone_number, format: { with: /\d{10}/, message: "Entrez un téléphone valide" }, allow_nil: true
