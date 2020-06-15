@@ -1,13 +1,12 @@
 const toggleEventForm = () => {
   const eventForms = document.querySelectorAll(".event-form");
-  const testEvent = document.querySelectorAll(".test-event");
+  const kidEvents = document.querySelectorAll(".kid-event");
 
-  testEvent.forEach(t => {
-    t.addEventListener("click", e => {
+  kidEvents.forEach(kidEvent => {
+    kidEvent.addEventListener("click", e => {
       eventForms.forEach(eventForm => {
         eventForm.classList.add("d-none");
       });
-      console.log(e.target.id);
       $(`#${e.target.id}-event-container`).toggleClass("d-none");
     });
   });

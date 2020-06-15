@@ -1,7 +1,7 @@
 <div class="d-flex my-3">
 <% current_user.babysits.each do |babysit| %>
 <% if babysit.validated == true %>
-  <div class="kid-container test-event">
+  <div class="kid-container kid-event">
     <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1">
       <%= babysit.kid.first_name %>
     </div>
