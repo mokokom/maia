@@ -86,18 +86,18 @@ puts "Creating Users, Kids, Babysits and Events..."
 
 	event1 = Event.new(
 		begin_event: DateTime.now,
-		tag: "Repas",
+		tag: "food",
 		content: "Comme attendu Léo à adoré ses courgettes!!"
 	)
 	event2 = Event.new(
 		begin_event: DateTime.now,
-		tag: "Dodo",
+		tag: "sleep",
 		content: "Léo à fait une belle sieste"
 	)
 	event3 = Event.new(
 		begin_event: DateTime.now,
 		end_event: DateTime.now,
-		tag: "Activité",
+		tag: "activity",
 		content: "Léo à fait une belle peinture"
 	)
 

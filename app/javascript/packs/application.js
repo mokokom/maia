@@ -27,6 +27,7 @@ import { filterKidOnAvatarClick } from "../components/filter-kid";
 import { stickyTagContainerOnScroll } from "../components/tags-container";
 import { scrollToTop } from "../components/scroll-to-top";
 import { toggleEventForm } from "../components/event-form";
+import { initCriterias } from "../components/filter-tag";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -38,4 +39,5 @@ document.addEventListener("turbolinks:load", () => {
   stickyTagContainerOnScroll();
   scrollToTop();
   toggleEventForm();
+  initCriterias();
 });

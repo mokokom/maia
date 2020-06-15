@@ -2,7 +2,7 @@
 <div class="d-flex my-3">
   <% current_user.kids.each do |kid| %>
     <div class="kid-container">
-      <div id="kid-<%="#{kid.id}"%>" class="avatar-kids m-1">
+      <div id="kid-<%="#{kid.id}"%>" class="avatar-kids m-1" data-criteria-type="kid" data-selected="false" data-criteria-value=<%=kid.id%> >
         <%= kid.first_name %>
       </div>
     </div>
