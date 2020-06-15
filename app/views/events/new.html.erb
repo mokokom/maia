@@ -1,14 +1,23 @@
+<div class="d-flex my-3">
 <% current_user.babysits.each do |babysit| %>
 <% if babysit.validated == true %>
-<p> <%=babysit.kid.first_name%> - validé!</p>
+  <div class="kid-container kid-event">
+    <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1">
+      <%= babysit.kid.first_name %>
+    </div>
+  </div>
+<% end %>
+<% end %>
+</div>
 
-<div class="form-container">
+<% current_user.babysits.each do |babysit| %>
+<div id="kid-<%="#{babysit.kid_id}-event-container"%>" class="form-container event-form d-none">
   <div class="form-centered">
-    <h2>Créer un event :</h2>
+    <h2>Evenement de <%= babysit.kid.first_name %></h2>
     <%= simple_form_for([babysit.kid, babysit, @event]) do |f| %>
     <%= f.hidden_field :kid_id, value: babysit.kid.id %>
     <%= f.hidden_field :babysit_id, value: babysit.id %>
-    <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
+    <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'],label: false, :item_wrapper_class => 'btn btn-primary' %>
     <%= f.input :title %>
     <%= f.input :badge %>
     <%= f.input :content %>
@@ -19,5 +28,4 @@
     <% end %>
   </div>
 </div>
-<% end %>
 <% end %>
