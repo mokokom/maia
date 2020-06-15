@@ -54,6 +54,7 @@
 <br>
 
 <% if current_user.is_nanny == false  %>
+
 <br>
 <p><% @kid.babysits.each do |babysit|%></p>
   <p class="category-profil">Prénom</p>
@@ -62,11 +63,14 @@
   <p class="font-weight-bold" ><%= babysit.nanny.last_name %></p>
   <br>
   <br>
-  <p class="font-weight-bold">Email:<%= babysit.nanny.email %></p>
+  <p class="category-profil">Email</p>
+  <p class="font-weight-bold"><%= babysit.nanny.email %></p>
   <br>
-  <p class="font-weight-bold">Adresse:<%= babysit.nanny.address %></p>
+  <p class="category-profil">Adresse</p>
+  <p class="font-weight-bold"><%= babysit.nanny.address %></p>
   <br>
-  <p class="font-weight-bold">Téléphone:<%= babysit.nanny.phone_number %></p>
+  <p class="category-profil">Télépehone</p>
+  <p class="font-weight-bold"><%= babysit.nanny.phone_number %></p>
 <% end %>
 
 <% end %>
