@@ -1,6 +1,21 @@
-<%= link_to 'dashboard', dashboard_path %>
+<div class="container-fluid dashboard">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-md-6">
+      <div class="card my-3">
+        <div class="card-body">
+          <div class="profile-container d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title"><%= @kid.first_name%></h5>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+          </div>
+        </div>
+      </div>
 
-<%= link_to 'Editer le profil', edit_kid_path(@kid)%>
+<%= link_to dashboard_path do %>
+<button class="shadow-sm p-2 px-3 mb-3 mt-3 bg-white rounded-pill border-0">Dashboard</button>
+ <% end %>
+<%= link_to edit_kid_path(@kid) do %>
+<button class="shadow-sm p-2 px-3 mb-3 mt-3 bg-white rounded-pill border-0 float-right">Editer mon profil</button>
+ <% end %>
 
 <br>
 <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
@@ -17,17 +32,65 @@
 <p>santé:</p>
 <p><%= @kid.health_habit %></p>
 
+ <div class="card-profil">
+<p class="category-profil">Prénom</p>
+<p class="font-weight-bold"><%= @kid.first_name %></p>
+<p class="category-profil">Nom</p>
+<p class="font-weight-bold"><%=@kid.parent.last_name%></p>
+<br>
+<p class="category-profil">Age</p>
+<p class="font-weight-bold"><%= @kid.age %>mois</p>
+<p class="category-profil">Poids<p>
+<p class="font-weight-bold"><%= @kid.weight %>kgs</p>
+<br>
+<br>
+<p class="category-profil">Rythme de sommeil</p>
+<% if @kid.sleep_habit %>
+<p class="font-weight-bold"><%= @kid.sleep_habit%></p>
+<%else%>
+<p>champ vide</p>
+<%end%>
+<br>
+<p class="category-profil">Habitudes alimentaires</p>
+<% if @kid.food_habit%>
+<p class="font-weight-bold"><%= @kid.food_habit %></p>
+<%else%>
+<p>champ vide</p>
+<%end%>
+<br>
+<p class="category-profil">Santé</p>
+<% if @kid.health_habit %>
+<p class="font-weight-bold"><%= @kid.health_habit %></p>
+<%else%>
+<p class="font-weight-bold font-italic">champ vide</p>
+<%end%>
+
 <br>
 <br>
 
 <% if current_user.is_nanny == false  %>
-<p>Profil nounou</p>
-<% @kid.babysits.each do |babysit|%>
-  <p><%= babysit.nanny.first_name %></p>
-  <p><%= babysit.nanny.last_name %></p>
-  <p>email:<%= babysit.nanny.email %></p>
-  <p>adresse:<%= babysit.nanny.address %></p>
-  <p>téléphone:<%= babysit.nanny.phone_number %></p>
+
+<br>
+<p><% @kid.babysits.each do |babysit|%></p>
+  <p class="category-profil">Prénom</p>
+  <p class="font-weight-bold"><%= babysit.nanny.first_name %></p>
+  <p class="category-profil">Nom</p>
+  <p class="font-weight-bold" ><%= babysit.nanny.last_name %></p>
+  <br>
+  <br>
+  <p class="category-profil">Email</p>
+  <p class="font-weight-bold"><%= babysit.nanny.email %></p>
+  <br>
+  <p class="category-profil">Adresse</p>
+  <p class="font-weight-bold"><%= babysit.nanny.address %></p>
+  <br>
+  <p class="category-profil">Télépehone</p>
+  <p class="font-weight-bold"><%= babysit.nanny.phone_number %></p>
 <% end %>
 
 <% end %>
+     </div>
+    </div>
+   </div>
+  </div>
+</div>
