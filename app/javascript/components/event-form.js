@@ -1,7 +1,6 @@
 const toggleEventForm = () => {
   const eventForms = document.querySelectorAll(".event-form");
   const kidEvents = document.querySelectorAll(".kid-event");
-
   kidEvents.forEach(kidEvent => {
     kidEvent.addEventListener("click", e => {
       eventForms.forEach(eventForm => {

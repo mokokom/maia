@@ -13,6 +13,24 @@
 	<% else event.tag.downcase == "photo" %>
 	<% tag = "photo" %>
 	<% end %>
+<% day = "" %>
+	<% events.each do |event| %>
+		<% if event.begin_event.strftime("%A") == "Monday" %>
+			<% day = "Lundi" %>
+		<% elsif event.begin_event.strftime("%A") == "Tuesday"%>
+			<% day = "Mardi" %>
+		<% elsif event.begin_event.strftime("%A") == "Wednesday"%>
+			<% day = "Mercredi" %>
+		<% elsif event.begin_event.strftime("%A") == "Thursday"%>
+			<% day = "Jeudi" %>
+		<% elsif event.begin_event.strftime("%A") == "Friday"%>
+			<% day = "Vendredi" %>
+		<% elsif event.begin_event.strftime("%A") == "Saturday"%>
+			<% day = "Samedi" %>
+		<% elsif event.begin_event.strftime("%A") == "Sunday"%>
+			<% day = "Dimanche" %>
+		<% end %>
+	<% end %>
 
 	<% if(event.babysit.kid_id == babysit.kid_id) %>
 	<div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= event.tag.downcase %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
@@ -24,7 +42,7 @@
 				<% else %>
 				<span><%= event.title %></span>
 				<% end %>
-				<span><%= event.begin_event.strftime("%A %Hh%M")%>
+				<span><%= day %> <%=event.begin_event.strftime("%Hh%M")%>
 					<% if event.end_event.nil? %>
 					<%= "" %> </span>
 				<% else %>

@@ -8,22 +8,27 @@
   </div>
   <% end %>
 </div>
+<% current_user.babysits.each do |babysit| %>
+  <% if babysit.validated == false && @kids.include?(babysit.kid.id)%>
+    <p> en attente de validation
+      <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
+      <i class="far fa-check-circle"></i>
+    </p>
+    <% end %>
+  <% end %>
+<% end %>
 <%= render "shared/filter-tag" %>
+
 <% current_user.babysits.each do |babysit| %>
 <div id="kid-<%="#{babysit.kid_id}-container"%>" class="nounou-form mt-3">
 
-  <% if babysit.validated == false %>
-  <p> en attente de validation
-    <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
-    <i class="far fa-check-circle"></i></p>
-  <% end %>
 
-  <% elsif babysit.validated == true %>
   <%= render "shared/kid-card", babysit: babysit, events: events %>
 
-  <% end %>
+
 </div>
 <% end %>
-  <div class="sticky-bottom-nav position-sticky">
-    <%= link_to "+", new_event_path, class: "action-btn" %>
-  </div>
+
+<div class="sticky-bottom-nav position-sticky">
+  <%= link_to "+", new_event_path, class: "action-btn" %>
+</div>

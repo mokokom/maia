@@ -56,7 +56,8 @@ const initCriterias = () => {
   btnCriteriasType.forEach(btn => {
     btn.addEventListener("click", e => {
       // on passe le data-selected à l'opposé de sa valeur precedente
-      $(btn).toggleClass("active-kid");
+      // $(btn).toggleClass("active-kid");
+
       if (btn.dataset.selected == "false") {
         btn.dataset.selected = "true";
       } else {

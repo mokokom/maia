@@ -11,18 +11,8 @@
     <span class="add-kid">+</span>
   </div>
 </div>
-<%= render "shared/filter-tag" %>
-<%# Create a container with kid id to conditionnaly show it depending on kid avatar clicked %>
 <% current_user.kids.each do |kid| %>
-  <div id="kid-<%="#{kid.id}-container"%>" class="nounou-form mt-3">
-    <% kid.babysits.each do |babysit| %>
-      <% if babysit.validated == false %>
-        <p> en attente de validation</p>
-      <% elsif babysit.validated == true %>
-        <%= render "shared/kid-card", events: events, babysit: babysit%>
-      <% end %>
-    <% end %>
-    <% if kid.babysits.empty? %>
+    <% if kid.babysits.empty? && @kids.include?(kid.id) %>
       <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
       <form action="/dashboard" class='form-inline justify-content-between'>
         <input type="text" name="email" placeholder="Email de la nounou">
@@ -35,6 +25,21 @@
           <%= f.submit %>
         <% end %>
       <% end %>
+    <% end %>
+    <% kid.babysits.each do |babysit| %>
+    <% if babysit.validated == false && @kids.include?(kid.id) %>
+        <p> en attente de validation</p>
+      <% end %>
+      <% end %>
+<% end %>
+<%= render "shared/filter-tag" %>
+<%# Create a container with kid id to conditionnaly show it depending on kid avatar clicked %>
+<% current_user.kids.each do |kid| %>
+  <div id="kid-<%="#{kid.id}-container"%>" class="nounou-form mt-3">
+    <% kid.babysits.each do |babysit| %>
+      
+        <%= render "shared/kid-card", events: events, babysit: babysit%>
+      
     <% end %>
   </div>
 <% end %>
@@ -50,3 +55,10 @@
     <% end %>
   </div>
 </div>
+<% current_user.kids.each do |kid| %>
+  <% if @babysit.validated == true && @kids.include?(kid.id)%>
+    <div class="sticky-bottom-nav position-sticky">
+      <%= link_to "+", new_event_path, class: "action-btn" %>
+    </div>
+  <% end %>
+<% end %>
