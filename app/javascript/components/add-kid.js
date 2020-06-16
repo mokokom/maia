@@ -4,6 +4,7 @@ const toggleAddKidForm = () => {
   const addKidForm = document.querySelector(".add-kid-form");
   if (addKid) {
     addKid.addEventListener("click", () => {
+      console.log("ok");
       nounouForms.forEach(nounouForm => {
         nounouForm.classList.add("d-none");
       });
