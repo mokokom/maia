@@ -1,6 +1,7 @@
 .dropdown-menu {
-	background-color: $light-pink;
-	box-shadow: 2px 2px 20px grey;
-	border: none;
-	border-radius: 8px;
+  background-color: $light-pink;
+  box-shadow: 2px 2px 20px grey;
+  border: none;
+  border-radius: 8px;
+  z-index: 2;
 }
