@@ -21,13 +21,13 @@
     <%= f.hidden_field :kid_id, value: babysit.kid.id %>
     <%= f.hidden_field :babysit_id, value: babysit.id %>
     <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'],label: false, :item_wrapper_class => 'btn btn-primary' %>
-    <%= f.input :title %>
+    <%= f.input :title, label: "Titre" %>
     <%= f.input :badge %>
-    <%= f.input :content %>
-    <%= f.input :begin_event, as: :time %>
-    <%= f.input :end_event, as: :time %>
+    <%= f.input :content, label: "Commentaire" %>
+    <%= f.input :begin_event, as: :time, label: "Début de l'événement" %>
+    <%= f.input :end_event, as: :time, label: "Fin de l'événement" %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit  %>
+    <%= f.button :submit %>
     <% end %>
   </div>
 </div>

@@ -5,11 +5,11 @@
     <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
     <%= f.input :title %>
     <%= f.input :badge %>
-    <%= f.input :content %>
-    <%= f.input :begin_event %>
-    <%= f.input :end_event %>
+    <%= f.input :content, label: "Commentaire" %>
+    <%= f.input :begin_event, as: :time, label: "Début de l'événement" %>
+    <%= f.input :end_event, as: :time, label: "Fin de l'événement" %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit  %>
+    <%= f.button :submit %>
     <% end %>
   </div>
 </div>
