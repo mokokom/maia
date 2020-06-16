@@ -1,15 +1,28 @@
-<h1>fiche profils enfants</h1>
-
-<%= link_to 'dashboard', dashboard_path %>
-
-
-<% current_user.kids.each do |kid| %>
-<p><%= kid.first_name %> - <%= link_to 'Voir le profil', kid_path(kid) %></p>
-<% end %>
-
-
-<% if current_user.is_nanny == true %>
-    <% current_user.babysits.each do |babysit| %>
-    <%=babysit.kid.first_name%> - <%= link_to 'Voir le profil', kid_path(babysit.kid) %>
-  <% end %>
+<div class="container-fluid dashboard">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-md-6">
+      <div class="card my-3">
+        <div class="card-body">
+          <h2>Mes kids</h2>
+        </div>
+      </div>
+      <%= link_to dashboard_path do %>
+       <button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0 float-right">Dashboard</button>
+      <% end %>
+      <div class= "avatar-container">
+        <% current_user.kids.each do |kid| %>
+        <%= link_to kid_path(kid) do %>
+          <div class="avatar-kids-profil active-kid"><%=kid.first_name%></div>
+          <% end %>
+        <% end %>
+          <% if current_user.is_nanny == true %>
+            <% current_user.babysits.each do |babysit| %>
+            <%= link_to kid_path(babysit.kid) do %>
+           <div class="avatar-kids-profil active-kid"><%=babysit.kid.first_name%></div>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>

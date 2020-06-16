@@ -34,3 +34,15 @@
 .category-profil {
   color: gray;
 }
+
+.heart {
+  height: 15px;
+  width: 15px;
+  background-size: cover;
+  background-image: url(https://res.cloudinary.com/dvtghr1xb/image/upload/v1592302670/heart_jtivse.png);
+  z-index: 5;
+}
+
+.dark .heart {
+  background-image: url(https://res.cloudinary.com/dvtghr1xb/image/upload/v1592302670/heart_1_olwdng.png);
+}
