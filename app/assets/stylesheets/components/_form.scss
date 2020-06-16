@@ -21,7 +21,7 @@
 }
 
 .create-event-btn {
-  width: 100%;
+  width: 100% !important;
   text-align: center;
   font-size: 14px;
   font-weight: normal;
@@ -79,7 +79,6 @@
   font-size: 10px;
 }
 
-
 .collection_radio_buttons {
   display: none;
 }
@@ -120,16 +119,23 @@
   z-index: 1;
 }
 
-.container-tags {
-  height: 20vh;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 300px;
+.btn:not(:disabled):not(.disabled){
+  width: 40px;
+  height: 40px;
 }
 
 .container-tags .btn-primary {
-  margin: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  height: 20vh;
+  margin-bottom: 20px;
+}
+
+select.date-time {
+  width: 10px;
 }
 
 .container-tags input[type="radio"] {
@@ -141,6 +147,9 @@ input#event_tag_repas {
   width: 40px;
   height: 40px;
   background-color: $eat-color;
+  background-image: url('vegetable.png');
+  background-size: cover;
+  background-position: center;
   }
 
 input#event_tag_activité {
@@ -148,14 +157,19 @@ input#event_tag_activité {
   width: 40px;
   height: 40px;
   background-color: $activity-color;
+  background-image: url('activity.png');
+  background-size: cover;
+  background-position: center;
 }
-
 
 input#event_tag_dodo {
   border-radius: 16px;
   width: 40px;
   height: 40px;
   background-color: $sleep-color;
+  background-image: url('sleep.png');
+  background-size: cover;
+  background-position: center;
 }
 
 input#event_tag_santé {
@@ -163,6 +177,9 @@ input#event_tag_santé {
   width: 40px;
   height: 40px;
   background-color: $health-color;
+  background-image: url('health.png');
+  background-size: cover;
+  background-position: center;
 }
 
 input#event_tag_change {
@@ -170,6 +187,9 @@ input#event_tag_change {
   width: 40px;
   height: 40px;
   background-color: $diaper-color;
+  background-image: url('diaper.png');
+  background-size: cover;
+  background-position: center;
 }
 
 input#event_tag_photo {
@@ -177,4 +197,7 @@ input#event_tag_photo {
   width: 40px;
   height: 40px;
   background-color: $camera-color;
+  background-image: url('camera.png');
+  background-size: cover;
+  background-position: center;
 }
