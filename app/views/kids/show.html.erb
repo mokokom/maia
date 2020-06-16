@@ -5,7 +5,8 @@
         <div class="card-body">
           <div class="profile-container d-flex justify-content-between align-items-center mb-3">
             <h5 class="card-title"><%= @kid.first_name%></h5>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+              <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
+              <%= cl_image_tag current_user.photo.key, crop: :fill, gravity: :face, class: "avatar-kids"  %>
           </div>
         </div>
       </div>
@@ -16,6 +17,8 @@
 <%= link_to edit_kid_path(@kid) do %>
 <button class="shadow-sm p-2 px-3 mb-3 mt-3 bg-white rounded-pill border-0 float-right">Editer mon profil</button>
  <% end %>
+
+<br>
 
  <div class="card-profil">
 <p class="category-profil">Prénom</p>
@@ -31,7 +34,7 @@
 <br>
 <p class="category-profil">Rythme de sommeil</p>
 <% if @kid.sleep_habit %>
-<p class="font-weight-bold"><%= @kid.sleep_habit%></p> 
+<p class="font-weight-bold"><%= @kid.sleep_habit%></p>
 <%else%>
 <p>champ vide</p>
 <%end%>

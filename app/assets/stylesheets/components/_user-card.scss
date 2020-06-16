@@ -9,6 +9,16 @@
   margin-bottom: 0;
 }
 
+
+
+.align-photo {
+  text-align: center;
+}
+
+.align-photo > img {
+  width: 90%;
+}
+
 .card-profil {
   box-shadow: 1px 1px 20px #80808030;
   background-color: $light-pink;

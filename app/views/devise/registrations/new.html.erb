@@ -21,11 +21,11 @@
 
         <%= f.input :is_nanny, as: :boolean, label: false,
                 required: true %> -->
+
         <%= f.input :is_nanny, label: false, default: 1, collection: ["nounou", "famille"] %>
         <%= f.input :email,
                 label: false,
                 placeholder: "email",
-
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
