@@ -5,7 +5,8 @@
         <div class="card-body">
           <div class="profile-container d-flex justify-content-between align-items-center mb-3">
             <h5 class="card-title"><%= @kid.first_name%></h5>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+              <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
+              <%= cl_image_tag current_user.photo.key, crop: :fill, gravity: :face, class: "avatar-kids"  %>
           </div>
         </div>
       </div>
@@ -18,19 +19,6 @@
  <% end %>
 
 <br>
-<%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
-
-<p><%= @kid.first_name %></p>
-<p><%=@kid.parent.last_name%></p>
-
-<p><%= @kid.age %>mois</p>
-<p><%= @kid.weight %>kgs</p>
-<p>rythme de sommeil:</p>
-<p><%= @kid.sleep_habit %></p>
-<p>habitudes alimentaires:</p>
-<p><%= @kid.food_habit %></p>
-<p>santé:</p>
-<p><%= @kid.health_habit %></p>
 
  <div class="card-profil">
 <p class="category-profil">Prénom</p>

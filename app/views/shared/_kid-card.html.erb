@@ -40,9 +40,11 @@
 	<div class="card-body">
 		<p class="card-text"><%= event.content %> </p>
 		<span class="badge badge-pill badge-primary"><%= event.badge%></span>
+    <div class="align-photo">
     <% if event.photo.attached? %>
       <%= cl_image_tag event.photo.key, crop: :fill %>
     <% end %>
+    </div>
 	</div>
 	<% if current_user.is_nanny %>
 	<div class="card-footer">
