@@ -1,0 +1,10 @@
+let insertNewList = (listContent) => {
+  // grab the parent div of reviews
+	console.log("in insertNewList: ", listContent);
+  const eventsContainer = document.getElementById("events-list");
+  // insert my new review before end
+  eventsContainer.innerHTML = listContent;
+}
+// if the review has been saved or review has no error
+// Insert the review HTML in the doc
+insertNewList('<%= j render 'shared/kid-card', babysit: @babysit, events: @events %>');
