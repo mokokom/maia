@@ -24,14 +24,12 @@
     <%= f.input :title %>
     <%= f.input :badge %>
     <%= f.input :content %>
-    <%= f.input :begin_event %>
-    <%= f.input :end_event %>
+    <%= f.input :begin_event, as: :time %>
+    <%= f.input :end_event, as: :time %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit  %>
     <% end %>
   </div>
 </div>
 <% end %>
-</div>
-</div>
 </div>
