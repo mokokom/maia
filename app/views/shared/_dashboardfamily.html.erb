@@ -11,6 +11,7 @@
     <span class="add-kid">+</span>
   </div>
 </div>
+<%= render "shared/filter-tag" %>
 <%# Create a container with kid id to conditionnaly show it depending on kid avatar clicked %>
 <% current_user.kids.each do |kid| %>
   <div id="kid-<%="#{kid.id}-container"%>" class="nounou-form mt-3">

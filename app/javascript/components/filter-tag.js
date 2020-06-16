@@ -69,10 +69,10 @@ const initCriterias = () => {
       // }
       // on récupère ts les btn de critères enfant (getCriteria("kid"))
       const kidCriteria = getCriterias("kid");
-      // console.log(kidCriteria);
+      console.log(kidCriteria);
       // on récupère ts les btn de critères tag (getCriteria("tag"))
       const tagCriteria = getCriterias("tag");
-      // console.log(tagCriteria);
+      console.log(tagCriteria);
 
       const url = new URL("/dashboard", "http://localhost:3000");
       const params = { kids: kidCriteria, tags: tagCriteria };

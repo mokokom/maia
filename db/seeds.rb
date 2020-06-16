@@ -124,7 +124,7 @@ puts "Creating Users, Kids, Babysits and Events..."
 	event4 = Event.new(
 		begin_event: DateTime.now,
 		end_event: DateTime.now,
-		tag: "change",
+		tag: "diaper",
 		content: "Lucas est irrité",
 		badge: "liniment"
 	)
@@ -132,7 +132,7 @@ puts "Creating Users, Kids, Babysits and Events..."
 	event1.babysit = babysit1
 	event2.babysit = babysit1
 	event3.babysit = babysit1
-	event4.babysit = babysit1
+	event4.babysit = babysit3
 
 	event1.save
 	event2.save

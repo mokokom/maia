@@ -1,23 +1,4 @@
-<div class="tags-container my-3 d-flex justify-content-center">
-	<div class="tag-box food m-1" data-criteria-type="tag" data-selected="false" data-criteria-value="food">
-		<%= image_tag("vegetable.png") %>
-	</div>
-	<div class="tag-box sleep m-1" data-criteria-type="tag" data-selected="false" data-criteria-value="sleep">
-		<%= image_tag("sleep.png") %>
-	</div>
-	<div class="tag-box activity m-1" data-criteria-type="tag" data-selected="false" data-criteria-value="activity">
-		<%= image_tag("activity.png") %>
-	</div>
-	<div class="tag-box camera m-1" data-criteria-type="tag" data-selected="false" data-criteria-value="camera">
-		<%= image_tag("camera.png") %>
-	</div>
-	<div class="tag-box diaper m-1" data-criteria-type="tag" data-selected="false" data-criteria-value="diaper">
-		<%= image_tag("diaper.png") %>
-	</div>
-	<div class="tag-box health m-1" data-criteria-type="tag" data-selected="false" data-criteria-value="health">
-		<%= image_tag("health.png") %>
-	</div>
-</div>
+
 <% @events.each do |event| %>
 <% if event.tag.downcase == "food" %>
 <% tag = "repas" %>
@@ -32,6 +13,7 @@
 <% else event.tag.downcase == "photo" %>
 <% tag = "photo" %>
 <% end %>
+
 <% if(event.babysit.kid_id == babysit.kid_id) %>
 <div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= event.tag.downcase %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
 	<div class="card-header">

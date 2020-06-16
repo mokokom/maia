@@ -8,7 +8,7 @@
   </div>
   <% end %>
 </div>
-
+<%= render "shared/filter-tag" %>
 <% current_user.babysits.each do |babysit| %>
 <div id="kid-<%="#{babysit.kid_id}-container"%>" class="nounou-form mt-3">
 
@@ -21,9 +21,9 @@
   <% elsif babysit.validated == true %>
   <%= render "shared/kid-card", babysit: babysit %>
 
-  <div class="sticky-bottom-nav position-sticky">
-    <%= link_to "+", new_event_path, class: "action-btn" %>
-  </div>
   <% end %>
 </div>
 <% end %>
+  <div class="sticky-bottom-nav position-sticky">
+    <%= link_to "+", new_event_path, class: "action-btn" %>
+  </div>
