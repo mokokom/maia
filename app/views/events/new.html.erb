@@ -20,9 +20,7 @@
     <%= simple_form_for([babysit.kid, babysit, @event]) do |f| %>
     <%= f.hidden_field :kid_id, value: babysit.kid.id %>
     <%= f.hidden_field :babysit_id, value: babysit.id %>
-    <div class="tags-new-event">
-    <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'], label: false, :item_wrapper_class => 'btn btn-primary' %>
-    </div>
+    <%= f.input :tag, as: :radio_buttons, value: false, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'], label: false, :item_wrapper_class => 'btn btn-primary', class: "tags-container"%>
     <%= f.input :title, label: false, placeholder: 'Ajoutez un titre' %>
     <%= f.input :badge, label: false, placeholder: 'Ajoutez un badge' %>
     <p class='info-badge'><i class="fas fa-info-circle"></i>Un badge consiste en un mot qui apporte une précision</p>

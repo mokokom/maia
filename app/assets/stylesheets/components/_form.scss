@@ -20,14 +20,6 @@
   display: none;
 }
 
-.tags-new-event {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
 .create-event-btn {
   width: 100%;
   text-align: center;
@@ -87,15 +79,9 @@
   font-size: 10px;
 }
 
-#event_tag_repas, #event_tag_dodo, #event_tag_change, #event_tag_activité, #event_tag_santé, #event_tag_photo {
-    width: 50px;
-    height: 50px;
-    padding: 7px;
-    border-radius: 16px;
-}
 
-#event_tag_repas {
-  background-color: red;
+.collection_radio_buttons {
+  display: none;
 }
 
 .underline-title:before {
@@ -126,4 +112,29 @@
 .form-control-file {
   box-shadow: 1px 1px 10px $light-gray-opacity;
   border-radius: 8px;
+}
+
+.new-tag {
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  border-radius: 8px;
+  background-color: $eat-color;
+  background-image: url('vegetable.png');
+}
+
+input#event_tag_repas {
+  width: 40px;
+  height: 40px;
+  background-color: $eat-color;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
