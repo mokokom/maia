@@ -50,13 +50,13 @@ const initCriterias = () => {
   const btnCriteriasValue = document.querySelectorAll(
     "div[data-criteria-value]"
   );
-  console.log(btnCriteriasType);
+  // console.log(btnCriteriasType);
   // console.log(btnCriteriasValue);
   // Micro sur chaque btn a l'event click
   btnCriteriasType.forEach(btn => {
     btn.addEventListener("click", e => {
       // on passe le data-selected à l'opposé de sa valeur precedente
-      console.log(btn.dataset);
+      $(btn).toggleClass("active-kid");
       if (btn.dataset.selected == "false") {
         btn.dataset.selected = "true";
       } else {
@@ -69,8 +69,15 @@ const initCriterias = () => {
       // }
       // on récupère ts les btn de critères enfant (getCriteria("kid"))
       const kidCriteria = getCriterias("kid");
+      // console.log(kidCriteria);
       // on récupère ts les btn de critères tag (getCriteria("tag"))
       const tagCriteria = getCriterias("tag");
+      // console.log(tagCriteria);
+
+      const url = new URL("/dashboard", "http://localhost:3000");
+      const params = { kids: kidCriteria, tags: tagCriteria };
+      url.search = new URLSearchParams(params).toString();
+      fetch(url);
     });
   });
   // on envoi une requete avec les critère avec en params les critères récuperé
@@ -92,10 +99,11 @@ const getCriterias = type => {
   //   .filter("div[data-selected=true]");
 
   // map sr le tableau pour recup la valeur de chaque noeux
-  // join le tableau avec _&_
+  // join le tableau avec __
   let criterias = selectedCriterias.map(criteria => criteria.criteriaValue);
 
-  console.log(criterias.join("_&_"));
+  // console.log(criterias.join("__"));
+  return criterias.join("__");
 };
 
 export { initCriterias };

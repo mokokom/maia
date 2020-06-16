@@ -13,7 +13,7 @@
 </div>
 <%# Create a container with kid id to conditionnaly show it depending on kid avatar clicked %>
 <% current_user.kids.each do |kid| %>
-  <div id="kid-<%="#{kid.id}-container"%>" class="d-none nounou-form mt-3">
+  <div id="kid-<%="#{kid.id}-container"%>" class="nounou-form mt-3">
     <% kid.babysits.each do |babysit| %>
       <% if babysit.validated == false %>
         <p> en attente de validation</p>

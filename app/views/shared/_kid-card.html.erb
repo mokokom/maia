@@ -19,26 +19,26 @@
 	</div>
 </div>
 <% @events.each do |event| %>
-<% if event.tag.downcase == "repas" %>
-<% tag = "food" %>
-<% elsif event.tag.downcase == "dodo" %>
-<% tag = "sleep" %>
-<% elsif event.tag.downcase == "santé" %>
-<% tag = "health" %>
-<% elsif event.tag.downcase == "change" %>
-<% tag = "diaper" %>
-<% elsif event.tag.downcase == "activité" %>
-<% tag = "activity" %>
+<% if event.tag.downcase == "food" %>
+<% tag = "repas" %>
+<% elsif event.tag.downcase == "sleep" %>
+<% tag = "dodo" %>
+<% elsif event.tag.downcase == "health" %>
+<% tag = "santé" %>
+<% elsif event.tag.downcase == "diaper" %>
+<% tag = "change" %>
+<% elsif event.tag.downcase == "activity" %>
+<% tag = "activité" %>
 <% else event.tag.downcase == "photo" %>
 <% tag = "photo" %>
 <% end %>
 <% if(event.babysit.kid_id == babysit.kid_id) %>
-<div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= tag %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
+<div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= event.tag.downcase %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
 	<div class="card-header">
 		<div class="d-flex justify-content-between">
 			<span><%= event.babysit.kid.first_name %></span>
 			<% if event.title.nil? %>
-			<span><%= event.tag %></span>
+			<span><%= tag.capitalize %></span>
 			<% else %>
 			<span><%= event.title %></span>
 			<% end %>

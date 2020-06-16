@@ -10,7 +10,7 @@
 </div>
 
 <% current_user.babysits.each do |babysit| %>
-<div id="kid-<%="#{babysit.kid_id}-container"%>" class="d-none nounou-form mt-3">
+<div id="kid-<%="#{babysit.kid_id}-container"%>" class="nounou-form mt-3">
 
   <% if babysit.validated == false %>
   <p> en attente de validation

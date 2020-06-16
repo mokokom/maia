@@ -15,19 +15,21 @@ class PagesController < ApplicationController
     @babysit = Babysit.new
     email = params["email"]
     @result = User.find_by(email: email)
-    @events = current_user.events
-    if params[:kids]
-      kids_ids = params[:kids].split("_&_").map(:to_i)
+    @events = Event.all
+    if params[:kids] && params[:kids] != ""
+      kids_ids = params[:kids].split("__").map{|kid|kid.to_i}
       @events = [];
       kids_ids.each do |kid_id|
-        @events << Event.where(kid: Kid.find(kid_id))
+        @events << Kid.find(kid_id).events
       end
+      @events.flatten!
     end
-    if params[:tags]
-      tags = params[:tags].split("_&_")
+    if params[:tags] && params[:tags] != ""
+      tags = params[:tags].split("__")
       @events.filter! do |event|
         tags.include?(event.tag)
       end
     end
+    p @events
   end
 end
