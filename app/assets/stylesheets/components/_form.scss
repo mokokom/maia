@@ -115,26 +115,66 @@
 }
 
 .new-tag {
-  width: 50px;
-  height: 50px;
-  z-index: 1;
-  border-radius: 8px;
-  background-color: $eat-color;
-  background-image: url('vegetable.png');
-}
-
-input#event_tag_repas {
   width: 40px;
   height: 40px;
-  background-color: $eat-color;
+  z-index: 1;
 }
 
-input[type="radio"] {
+.container-tags {
+  height: 20vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 300px;
+}
+
+.container-tags .btn-primary {
+  margin: 20px;
+}
+
+.container-tags input[type="radio"] {
   -webkit-appearance: none;
 }
 
-.tags-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+input#event_tag_repas {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $eat-color;
+  }
+
+input#event_tag_activité {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $activity-color;
+}
+
+
+input#event_tag_dodo {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $sleep-color;
+}
+
+input#event_tag_santé {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $health-color;
+}
+
+input#event_tag_change {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $diaper-color;
+}
+
+input#event_tag_photo {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $camera-color;
 }
