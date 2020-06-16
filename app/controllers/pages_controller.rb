@@ -11,6 +11,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+  @kids = []
+  @tags = []
     @kid = Kid.new
     @babysit = Babysit.new
     email = params["email"]
@@ -18,18 +20,20 @@ class PagesController < ApplicationController
     @events = Event.all
     if params[:kids] && params[:kids] != ""
       kids_ids = params[:kids].split("__").map{|kid|kid.to_i}
+      @kids = kids_ids
       @events = [];
       kids_ids.each do |kid_id|
         @events << Kid.find(kid_id).events
       end
-      @events.flatten!
+      @events = @events.flatten
     end
     if params[:tags] && params[:tags] != ""
       tags = params[:tags].split("__")
-      @events.filter! do |event|
+      @tags = tags
+      @events = @events.to_a.filter do |event|
         tags.include?(event.tag)
       end
     end
-    p @events
   end
+
 end

@@ -5,16 +5,18 @@
         <div class="card-body">
           <div class="profile-container d-flex justify-content-between align-items-center mb-3">
             <h5 class="card-title">Bonjour <%= current_user.first_name %></h5>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-          </div>
-          <p class="card-text">Une nouvelle journée pour votre enfant!</p>
-          <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">carnet de liaison</button>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar-kids", gravity: :face %>
+            <% end %>
         </div>
+        <p class="card-text">Une nouvelle journée pour votre enfant!</p>
+          <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">carnet de liaison</button>
       </div>
+    </div>
       <% if current_user.is_nanny %>
-        <%= render 'shared/dashboardbabysit', babysit: @babysit, event: @event %>
+        <%= render 'shared/dashboardbabysit', babysit: @babysit, events: @events %>
       <% else %>
-        <%= render 'shared/dashboardfamily' %>
+        <%= render 'shared/dashboardfamily', events: @events %>
       <% end %>
     </div>
   </div>

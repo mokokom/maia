@@ -77,7 +77,8 @@ const initCriterias = () => {
       const url = new URL("/dashboard", "http://localhost:3000");
       const params = { kids: kidCriteria, tags: tagCriteria };
       url.search = new URLSearchParams(params).toString();
-      fetch(url);
+      // fetch(url);
+      window.location.href = url;
     });
   });
   // on envoi une requete avec les critère avec en params les critères récuperé

@@ -1,48 +1,49 @@
+<div id="events-list">
+	<% events.each do |event| %>
+	<% if event.tag.downcase == "food" %>
+	<% tag = "repas" %>
+	<% elsif event.tag.downcase == "sleep" %>
+	<% tag = "dodo" %>
+	<% elsif event.tag.downcase == "health" %>
+	<% tag = "santé" %>
+	<% elsif event.tag.downcase == "diaper" %>
+	<% tag = "change" %>
+	<% elsif event.tag.downcase == "activity" %>
+	<% tag = "activité" %>
+	<% else event.tag.downcase == "photo" %>
+	<% tag = "photo" %>
+	<% end %>
 
-<% @events.each do |event| %>
-<% if event.tag.downcase == "food" %>
-<% tag = "repas" %>
-<% elsif event.tag.downcase == "sleep" %>
-<% tag = "dodo" %>
-<% elsif event.tag.downcase == "health" %>
-<% tag = "santé" %>
-<% elsif event.tag.downcase == "diaper" %>
-<% tag = "change" %>
-<% elsif event.tag.downcase == "activity" %>
-<% tag = "activité" %>
-<% else event.tag.downcase == "photo" %>
-<% tag = "photo" %>
-<% end %>
-
-<% if(event.babysit.kid_id == babysit.kid_id) %>
-<div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= event.tag.downcase %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
-	<div class="card-header">
-		<div class="d-flex justify-content-between">
-			<span><%= event.babysit.kid.first_name %></span>
-			<% if event.title.nil? %>
-			<span><%= tag.capitalize %></span>
-			<% else %>
-			<span><%= event.title %></span>
-			<% end %>
-			<span><%= event.begin_event.strftime("%A %Hh%M")%>
-				<% if event.end_event.nil? %>
-				<%= "" %> </span>
-			<% else %>
-			- <%= event.end_event.strftime("%Hh%M") %> </span>
+	<% if(event.babysit.kid_id == babysit.kid_id) %>
+	<div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= event.tag.downcase %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
+		<div class="card-header">
+			<div class="d-flex justify-content-between">
+				<span><%= event.babysit.kid.first_name %></span>
+				<% if event.title.nil? %>
+				<span><%= tag.capitalize %></span>
+				<% else %>
+				<span><%= event.title %></span>
+				<% end %>
+				<span><%= event.begin_event.strftime("%A %Hh%M")%>
+					<% if event.end_event.nil? %>
+					<%= "" %> </span>
+				<% else %>
+				- <%= event.end_event.strftime("%Hh%M") %> </span>
+				<% end %>
+			</div>
+		</div>
+		<div class="card-body">
+			<p class="card-text"><%= event.content %> </p>
+			<span class="badge badge-pill badge-primary"><%= event.badge%></span>
+		</div>
+		<% if current_user.is_nanny %>
+		<div class="card-footer">
+			<%= link_to edit_event_path(event) do %>
+			<i class="far fa-edit"></i>
 			<% end %>
 		</div>
-	</div>
-	<div class="card-body">
-		<p class="card-text"><%= event.content %> </p>
-		<span class="badge badge-pill badge-primary"><%= event.badge%></span>
-	</div>
-	<% if current_user.is_nanny %>
-	<div class="card-footer">
-		<%= link_to edit_event_path(event) do %>
-		<i class="far fa-edit"></i>
 		<% end %>
 	</div>
 	<% end %>
+	<% end %>
 </div>
-<% end %>
-<% end %>

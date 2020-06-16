@@ -2,7 +2,7 @@
 <div class="d-flex my-3">
   <% current_user.babysits.each do |babysit| %>
   <div class="kid-container">
-    <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1" data-criteria-type="kid" data-selected="false" data-criteria-value=<%=babysit.kid_id%>>
+    <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1" data-criteria-type="kid" data-selected="<%= @kids.include?(babysit.kid.id)%>" data-criteria-value=<%=babysit.kid_id%>>
       <%= babysit.kid.first_name %>
     </div>
   </div>
@@ -19,7 +19,7 @@
   <% end %>
 
   <% elsif babysit.validated == true %>
-  <%= render "shared/kid-card", babysit: babysit %>
+  <%= render "shared/kid-card", babysit: babysit, events: events %>
 
   <% end %>
 </div>
