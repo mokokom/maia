@@ -63,9 +63,10 @@
 
 
 <p class="category-profil">Contrat prestation</p>
+<p style="font-style: italic;">Cliquez sur l'image pour afficher le contrat</p>
 <% if @kid.contract.attached?  %>
   <%= link_to cl_image_path @kid.contract.key, :fetch_format=>:auto do %>
-  <%= cl_image_tag @kid.contract.key, :fetch_format=>:auto, :crop => :fill, class: "avatar-kids" %>
+  <%= cl_image_tag @kid.contract.key, width:200, height:100, :fetch_format=>:auto, :crop => :fill %>
   <% end %>
 <% end %>
 
