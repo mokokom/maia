@@ -11,9 +11,15 @@ a {
   background-color: transparent;
 }
 
-
 textarea.form-control {
   margin-top: 50px;
   height: 15vh;
   margin-bottom: 30px;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:hover {
+  // color: #212529;
+  background-color: transparent;
+  border-color: transparent;
 }
