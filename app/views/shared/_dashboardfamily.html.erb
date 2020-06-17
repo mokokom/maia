@@ -26,8 +26,6 @@
 
 <% current_user.kids.each do |kid| %>
 
-
-
   <% if kid.babysits.empty? && @kids.include?(kid.id) %>
     <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
     <form action="/dashboard" class='form-inline justify-content-between'>
