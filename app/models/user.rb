@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :photo
-
+  has_one_attached :contract
 
   has_many :kids, dependent: :destroy
   has_many :babysits

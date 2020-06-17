@@ -56,6 +56,13 @@
 <%else%>
 <p class="font-weight-bold font-italic">champ vide</p>
 <%end%>
+<br>
+<p class="category-profil">Contrat prestation</p>
+<% if @kid.contract.attached?  %>
+  <%= link_to cl_image_path @kid.contract.key, :fetch_format=>:auto do %>
+  <%= cl_image_tag @kid.contract.key, :fetch_format=>:auto, :crop => :fill, class: "avatar-kids" %>
+  <% end %>
+<% end %>
 
 <br>
 <br>
