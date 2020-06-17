@@ -1,34 +1,27 @@
 <h5> mes kids</h5>
-<div class="d-flex my-3">
+<div class="d-flex flex-wrap my-3">
   <% current_user.babysits.each do |babysit| %>
-  <div class="kid-container">
-    <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1" data-criteria-type="kid" data-selected="<%= @kids.include?(babysit.kid.id)%>" data-criteria-value=<%=babysit.kid_id%>>
-      <%= babysit.kid.first_name %>
+    <div class="kid-container">
+      <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1" data-criteria-type="kid" data-selected="<%= @kids.include?(babysit.kid.id)%>" data-criteria-value=<%=babysit.kid_id%>>
+        <%= babysit.kid.first_name %>
+      </div>
     </div>
-  </div>
   <% end %>
 </div>
 <% current_user.babysits.each do |babysit| %>
   <% if babysit.validated == false && @kids.include?(babysit.kid.id)%>
     <p> en attente de validation
       <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
-      <i class="far fa-check-circle"></i>
-    </p>
+        <i class="far fa-check-circle"></i>
+      </p>
     <% end %>
   <% end %>
 <% end %>
 <%= render "shared/filter-tag" %>
-
 <% current_user.babysits.each do |babysit| %>
-<div id="kid-<%="#{babysit.kid_id}-container"%>" class="nounou-form mt-3">
-
-
-  <%= render "shared/kid-card", babysit: babysit, events: events %>
-
-
-</div>
+  <div id="kid-<%="#{babysit.kid_id}-container"%>" class="nounou-form mt-3">
+    <%= render "shared/kid-card", babysit: babysit, events: events %>
+  </div>
 <% end %>
-
-<div class="sticky-bottom-nav position-sticky">
-  <%= link_to "+", new_event_path, class: "action-btn" %>
+</div>
 </div>
