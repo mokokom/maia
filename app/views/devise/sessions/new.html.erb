@@ -22,7 +22,7 @@
                 input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
-      <div class="form-actions text-center mt-5">
+      <div class="form-actions text-center">
         <%= f.button :submit, "Connexion", class: "shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0" %>
       </div>
       <% end %>
