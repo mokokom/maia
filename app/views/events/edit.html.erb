@@ -1,15 +1,24 @@
 <div class="form-container">
-  <div class="form-centered">
-    <h4>Modifier un event :</h4>
+  <p class="title-new-event">Modification d'un évenement pour <%=@event.babysit.kid.first_name%></p>
+  <div class="form-centered p-4">
     <%= simple_form_for(@event) do |f| %>
-    <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'] %>
-    <%= f.input :title %>
-    <%= f.input :badge %>
-    <%= f.input :content %>
-    <%= f.input :begin_event %>
-    <%= f.input :end_event %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit  %>
-    <% end %>
+    <div class="container-tags">
+            <div class="row">
+            <div>
+          <%= f.input :tag, as: :radio_buttons, collection: [['food', 'food'], ['sleep', 'sleep'], ['health', 'health'], ['diaper','diaper'], ['activity', 'activity'], ['Photo', 'photo']], label: "Évènement", :item_wrapper_class => 'btn btn-primary'%>
+        </div>
+      </div>
+    </div>
+    <%= f.input :title, label: false, placeholder: 'Ajoutez un titre' %>
+    <%= f.input :badge, label: false, placeholder: 'Ajoutez un badge' %>
+    <p class='info-badge'><i class="fas fa-info-circle"></i>Un badge consiste en un mot qui apporte une précision</p>
+    <p class='time-event'>Heure de début</p>
+    <%= f.input :begin_event, label: false, discard_year: true, discard_month: true %>
+    <p class='time-event'>Heure de fin</p>
+    <%= f.input :end_event, label: false, discard_year: true, discard_month: true %>
+    <p class="new-event-desc"><%= f.input :content, label: false, placeholder: 'Ajoutez votre description'  %></p>
+    <%= f.input :photo, label: false, as: :file %>
+    <%= f.button :submit, value: "Modifier l'évenement pour #{@event.babysit.kid.first_name}", class: 'create-event-btn btn shadow-sm p-2 px-3 mb-3 mt-2 bg-white rounded-pill border-0'  %>
+        <% end %>
   </div>
 </div>
