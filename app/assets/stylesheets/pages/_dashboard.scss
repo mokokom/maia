@@ -9,6 +9,13 @@ div[data-selected="true"] {
   animation: bordercolor 20500ms infinite ease-in-out;
 }
 
+.select-kid-border {
+  border: 3px solid $activity-color;
+  // transform: scale(1.2);
+  // transition: 0.3s ease-in-out;
+  animation: bordercolor 20500ms infinite ease-in-out;
+}
+
 @keyframes bordercolor {
   0% {
     border-color: $activity-color;

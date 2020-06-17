@@ -5,6 +5,34 @@
   background-color: #ffeeee;
 }
 
+.new-event-container .form-control {
+  background-color: white;
+}
+
+.new-event-container .string input {
+    border: 3px solid $activity-color;
+  // transform: scale(1.2);
+  // transition: 0.3s ease-in-out;
+  animation: bordercolor 20500ms infinite ease-in-out;
+}
+
+.new-event-container .file .optional {
+  border: none;
+  box-shadow: none;
+}
+
+.new-event-container select {
+  border: none;
+  box-shadow: none;
+}
+
+.new-event-container .sub-time-container {
+      border: 3px solid $activity-color;
+  // transform: scale(1.2);
+  // transition: 0.3s ease-in-out;
+  animation: bordercolor 20500ms infinite ease-in-out;
+}
+
 .form-control:focus {
   border: none;
   background-color: #ffeeee;
@@ -112,6 +140,10 @@ input#event_tag_food {
   background-position: center;
   }
 
+input#event_tag_food:active {
+  border: 3px solid black;
+}
+
 input#event_tag_activity {
   border-radius: 16px;
   width: 40px;
@@ -167,13 +199,25 @@ input#event_tag_photo {
 }
 
 .time-event {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 14px;
   text-align: center;
+  line-height: 10px;
+}
+
+.datetime {
+  display: flex;
+  justify-content : center;
+}
+
+.datetime select {
+  width: 70px;
+  margin: 3px;
 }
 
 .title-new-event {
   text-align: center;
+  font-size: 12px;
 }
 
 .nanny-results {
@@ -186,3 +230,14 @@ input#event_tag_photo {
   margin-top: 10px;
   border-bottom: 1px solid $light-gray;
 }
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  border-radius: 8px !important;
+}
+

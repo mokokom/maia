@@ -29,6 +29,7 @@ import { scrollToTop } from "../components/scroll-to-top";
 import { toggleEventForm } from "../components/event-form";
 import { initCriterias } from "../components/filter-tag";
 import { eventTags } from "../components/event-tags";
+import { selectKid } from "../components/select-kid";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -41,5 +42,6 @@ document.addEventListener("turbolinks:load", () => {
   scrollToTop();
   toggleEventForm();
   initCriterias();
+  selectKid();
   eventTags();
 });
