@@ -11,8 +11,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-  @kids = []
-  @tags = []
+    @kids = []
+    @tags = []
     @kid = Kid.new
     @babysit = Babysit.new
     email = params["email"]
@@ -35,5 +35,4 @@ class PagesController < ApplicationController
       end
     end
   end
-
 end

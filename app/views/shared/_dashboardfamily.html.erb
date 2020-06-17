@@ -1,5 +1,5 @@
 <h5> mes kids</h5>
-<div class="d-flex my-3">
+<div class="d-flex flex-wrap my-3">
   <% current_user.kids.each do |kid| %>
     <div class="kid-container">
       <div id="kid-<%="#{kid.id}"%>" class="avatar-kids m-1" data-criteria-type="kid" data-selected="<%= @kids.include?(kid.id) ?   "true" : "false"%>" data-criteria-value=<%=kid.id%> >
@@ -11,39 +11,6 @@
     <span class="add-kid">+</span>
   </div>
 </div>
-<% current_user.kids.each do |kid| %>
-    <% if kid.babysits.empty? && @kids.include?(kid.id) %>
-      <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
-      <form action="/dashboard" class='form-inline justify-content-between'>
-        <input type="text" name="email" placeholder="Email de la nounou">
-				<input type="hidden" name="kids" value="<%=kid.id%>">
-        <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
-      </form>
-      <% if @result %>
-        <%= @result.first_name %>
-        <%= form_for([kid, @babysit]) do |f| %>
-          <%= f.hidden_field :user_id, value: @result.id %>
-          <%= f.submit %>
-        <% end %>
-      <% end %>
-    <% end %>
-    <% kid.babysits.each do |babysit| %>
-    <% if babysit.validated == false && @kids.include?(kid.id) %>
-        <p> en attente de validation</p>
-      <% end %>
-      <% end %>
-<% end %>
-<%= render "shared/filter-tag" %>
-<%# Create a container with kid id to conditionnaly show it depending on kid avatar clicked %>
-<% current_user.kids.each do |kid| %>
-  <div id="kid-<%="#{kid.id}-container"%>" class="nounou-form mt-3">
-    <% kid.babysits.each do |babysit| %>
-      
-        <%= render "shared/kid-card", events: events, babysit: babysit%>
-      
-    <% end %>
-  </div>
-<% end %>
 <div class="form-container add-kid-form d-none mt-3">
   <div class="form-centered text-center">
     <h5>Ajouter un enfant à votre tableau de bord</h5>
@@ -56,10 +23,40 @@
     <% end %>
   </div>
 </div>
+
 <% current_user.kids.each do |kid| %>
-  <% if @babysit.validated == true && @kids.include?(kid.id)%>
-    <div class="sticky-bottom-nav position-sticky">
-      <%= link_to "+", new_event_path, class: "action-btn" %>
-    </div>
+
+  <% if kid.babysits.empty? && @kids.include?(kid.id) %>
+    <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
+    <form action="/dashboard" class='form-inline justify-content-between'>
+		<input type="hidden" name="kids" value="<%=kid.id%>">
+      <input type="text" name="email" placeholder="Email de la nounou">
+      <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
+    </form>
+    
+    <% if @result %>
+      <%= @result.first_name %>
+      <%= form_for([kid, @babysit]) do |f| %>
+        <%= f.hidden_field :user_id, value: @result.id %>
+        <%= f.submit %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% kid.babysits.each do |babysit| %>
+    <% if babysit.validated == false && @kids.include?(kid.id) %>
+      <p> en attente de validation</p>
+    <% end %>
   <% end %>
 <% end %>
+<%= render "shared/filter-tag" %>
+<%# Create a container with kid id to conditionnaly show it depending on kid avatar clicked %>
+<% current_user.kids.each do |kid| %>
+  <div id="kid-<%="#{kid.id}-container"%>" class="nounou-form mt-3">
+    <% kid.babysits.each do |babysit| %>
+      <%= render "shared/kid-card", events: events, babysit: babysit%>
+    <% end %>
+  </div>
+<% end %>
+
+
