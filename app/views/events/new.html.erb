@@ -16,7 +16,7 @@
 <% current_user.babysits.each do |babysit| %>
 <div id="kid-<%="#{babysit.kid_id}-event-container"%>" class="form-container event-form d-none">
   <p class="title-new-event">Ajout d'un évenement pour <%=babysit.kid.first_name%></p>
-  <div class="form-centered">
+  <div class="form-centered p-4">
     <%= simple_form_for([babysit.kid, babysit, @event]) do |f| %>
     <%= f.hidden_field :kid_id, value: babysit.kid.id %>
     <%= f.hidden_field :babysit_id, value: babysit.id %>
@@ -34,7 +34,7 @@
     <%= f.input :begin_event, label: false, discard_year: true, discard_month: true %>
     <p class='time-event'>Heure de fin</p>
     <%= f.input :end_event, label: false, discard_year: true, discard_month: true %>
-    <%= f.input :content, label: false, placeholder: 'Ajoutez votre description'  %>
+    <p class="new-event-desc"><%= f.input :content, label: false, placeholder: 'Ajoutez votre description'  %></p>
     <%= f.input :photo, label: false, as: :file %>
     <%= f.button :submit, value: "Ajouter à #{babysit.kid.first_name}", class: 'create-event-btn btn shadow-sm p-2 px-3 mb-3 mt-2 bg-white rounded-pill border-0'  %>
     <% end %>
