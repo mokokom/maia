@@ -76,6 +76,7 @@
 
 fieldset {
   height: 12vh;
+  z-index: -10;
 }
 
 select.date-time {
@@ -101,7 +102,7 @@ select.date-time {
   display: none;
 }
 
-input#event_tag_repas {
+input#event_tag_food {
   border-radius: 16px;
   width: 40px;
   height: 40px;
@@ -111,7 +112,7 @@ input#event_tag_repas {
   background-position: center;
   }
 
-input#event_tag_activité {
+input#event_tag_activity {
   border-radius: 16px;
   width: 40px;
   height: 40px;
@@ -121,7 +122,7 @@ input#event_tag_activité {
   background-position: center;
 }
 
-input#event_tag_dodo {
+input#event_tag_sleep {
   border-radius: 16px;
   width: 40px;
   height: 40px;
@@ -131,7 +132,7 @@ input#event_tag_dodo {
   background-position: center;
 }
 
-input#event_tag_santé {
+input#event_tag_health {
   border-radius: 16px;
   width: 40px;
   height: 40px;
@@ -141,7 +142,7 @@ input#event_tag_santé {
   background-position: center;
 }
 
-input#event_tag_change {
+input#event_tag_diaper {
   border-radius: 16px;
   width: 40px;
   height: 40px;
@@ -175,7 +176,13 @@ input#event_tag_photo {
   text-align: center;
 }
 
-
 .nanny-results {
+  font-size: 15px;
+  line-height: 1em;
+}
 
+.title-nanny-results {
+  font-size: 12px;
+  margin-top: 10px;
+  border-bottom: 1px solid $light-gray;
 }

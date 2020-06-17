@@ -23,7 +23,7 @@
     <div class="container-tags">
       <div class="row">
         <div>
-          <%= f.input :tag, as: :radio_buttons, collection: ['Repas', 'Dodo', 'Santé','Change', 'Activité', 'Photo'], label: false, :item_wrapper_class => 'btn btn-primary'%>
+          <%= f.input :tag, as: :radio_buttons, collection: [['food', 'food'], ['sleep', 'sleep'], ['health', 'health'], ['diaper','diaper'], ['activity', 'activity'], ['Photo', 'photo']], label: "Évènement", :item_wrapper_class => 'btn btn-primary'%>
         </div>
       </div>
     </div>
