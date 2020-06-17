@@ -71,13 +71,11 @@
 }
 
 .container-tags .btn-primary {
-  margin-left: 20px;
   margin-bottom: 20px;
 }
 
 fieldset {
-  height: 20vh;
-  margin-bottom: 20px;
+  height: 12vh;
 }
 
 select.date-time {
@@ -88,6 +86,7 @@ select.date-time {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container-tags input[type="radio"] {
@@ -158,4 +157,15 @@ input#event_tag_photo {
   background-position: center;
 }
 
+.info-badge {
+  font-size: 12px;
+}
 
+.time-event {
+  font-size: 14px;
+  text-align: center;
+}
+
+.title-new-event {
+  text-align: center;
+}
