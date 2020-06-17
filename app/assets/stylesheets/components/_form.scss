@@ -41,5 +41,121 @@
   text-decoration: underline;
 }
 
+.form-control-file {
+  box-shadow: 1px 1px 10px $light-gray-opacity;
+  border-radius: 8px;
+}
+
+.new-tag {
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
+.col-form-label {
+  display: none;
+}
+
+.create-event-btn {
+  width: 100% !important;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  height: 50px;
+  padding: 10px;
+}
+
+.container-tags .btn:not(:disabled):not(.disabled){
+  width: 50px;
+  height: 50px;
+}
+
+.container-tags .btn-primary {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  height: 20vh;
+  margin-bottom: 20px;
+}
+
+select.date-time {
+  width: 10px;
+}
+
+.container-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container-tags input[type="radio"] {
+  -webkit-appearance: none;
+}
+
+.container-tags label {
+  display: none;
+}
+
+input#event_tag_repas {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $eat-color;
+  background-image: url('vegetable.png');
+  background-size: cover;
+  background-position: center;
+  }
+
+input#event_tag_activité {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $activity-color;
+  background-image: url('activity.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_dodo {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $sleep-color;
+  background-image: url('sleep.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_santé {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $health-color;
+  background-image: url('health.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_change {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $diaper-color;
+  background-image: url('diaper.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_photo {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $camera-color;
+  background-image: url('camera.png');
+  background-size: cover;
+  background-position: center;
+}
 
 
