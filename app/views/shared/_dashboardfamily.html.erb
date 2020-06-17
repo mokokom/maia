@@ -35,10 +35,16 @@
     </form>
 
     <% if @result %>
-      <%= @result.first_name %>
-      <%= form_for([kid, @babysit]) do |f| %>
+    <div class="nanny-results">
+      <p class="title-nanny-results">resultat(s)</p>
+      <p><%= @result.first_name %></p>
+       <p><%= @result.last_name %></p>
+       <p><%= @result.address %></p>
+       <p><%= @result.phone_number %></p>
+       <%= form_for([kid, @babysit]) do |f| %>
         <%= f.hidden_field :user_id, value: @result.id %>
         <%= f.submit %>
+      </div>
       <% end %>
     <% end %>
   <% end %>

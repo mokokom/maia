@@ -41,5 +41,148 @@
   text-decoration: underline;
 }
 
+.form-control-file {
+  box-shadow: 1px 1px 10px $light-gray-opacity;
+  border-radius: 8px;
+}
 
+.new-tag {
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
 
+.col-form-label {
+  display: none;
+}
+
+.create-event-btn {
+  width: 100% !important;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  height: 50px;
+  padding: 10px;
+}
+
+.container-tags .btn:not(:disabled):not(.disabled){
+  width: 50px;
+  height: 50px;
+}
+
+.container-tags .btn-primary {
+  margin-bottom: 20px;
+}
+
+fieldset {
+  height: 12vh;
+  z-index: -10;
+}
+
+select.date-time {
+  width: 10px;
+}
+
+.container-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container-tags input[type="radio"] {
+  -webkit-appearance: none;
+}
+
+.container-tags input[type="radio"]:checked {
+  border: 3px solid black;
+}
+
+.container-tags label {
+  display: none;
+}
+
+input#event_tag_food {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $eat-color;
+  background-image: url('vegetable.png');
+  background-size: cover;
+  background-position: center;
+  }
+
+input#event_tag_activity {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $activity-color;
+  background-image: url('activity.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_sleep {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $sleep-color;
+  background-image: url('sleep.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_health {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $health-color;
+  background-image: url('health.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_diaper {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $diaper-color;
+  background-image: url('diaper.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input#event_tag_photo {
+  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: $camera-color;
+  background-image: url('camera.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.info-badge {
+  font-size: 12px;
+}
+
+.time-event {
+  margin-top: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.title-new-event {
+  text-align: center;
+}
+
+.nanny-results {
+  font-size: 15px;
+  line-height: 1em;
+}
+
+.title-nanny-results {
+  font-size: 12px;
+  margin-top: 10px;
+  border-bottom: 1px solid $light-gray;
+}
