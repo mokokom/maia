@@ -1,6 +1,26 @@
 // Specific CSS for your home-page
-.bg-pink {
+.container-bg-pink-home {
   background-color: $light-pink;
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+  top: 0;
+}
+
+.container-bg-pink-edit,
+.container-bg-pink-about {
+  background-color: $light-pink;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.container-bg-pink {
+  background-color: $light-pink;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
 }
 
 .bg-white {
