@@ -5,8 +5,10 @@
         <div class="card-body">
           <div class="profile-container d-flex justify-content-between align-items-center mb-3">
             <h5 class="card-title"><%= @kid.first_name%></h5>
-              <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
-              <%= cl_image_tag current_user.photo.key, crop: :fill, gravity: :face, class: "avatar-kids"  %>
+              <% if @kid.photo.attached?  %>
+                <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
+                <%= cl_image_tag current_user.photo.key, crop: :fill, gravity: :face, class: "avatar-kids"  %>
+              <% end %>
           </div>
         </div>
       </div>
