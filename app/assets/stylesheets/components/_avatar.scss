@@ -43,3 +43,22 @@
   align-items: center;
   color: grey;
 }
+
+.avatar-kids-profil {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  // background-color: #ff8a8a;
+  box-shadow: 1px 1px 50px 1px rgba(7, 4, 4, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  margin-left: 130px;
+  margin-top: 100px ;
+}
+
+.avatar-container {
+  margin-bottom: 150px;
+  margin-top: 150px;
+}
