@@ -17,3 +17,13 @@
 .health-color {
   background-color: $health-color;
 }
+
+.card-header span {
+  font-size: small;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.card-date {
+  font-size: small;
+}

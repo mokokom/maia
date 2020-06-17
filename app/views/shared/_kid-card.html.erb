@@ -34,14 +34,14 @@
     <% if(event.babysit.kid_id == babysit.kid_id) %>
       <div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= event.tag.downcase %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
         <div class="card-header">
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between align-items-center">
             <span><%= event.babysit.kid.first_name %></span>
             <% if event.title.blank? %>
               <span><%= tag.capitalize %></span>
             <% else %>
               <span><%= event.title %></span>
             <% end %>
-            <span><%= day %> <%=event.begin_event.strftime("%Hh%M")%>
+            <span class="card-date"><%= day %> <%=event.begin_event.strftime("%Hh%M")%>
               <% if event.end_event.nil? %>
                 <%= "" %> </span>
             <% else %>
@@ -57,16 +57,16 @@
             <%= cl_image_tag event.photo.key, crop: :fill %>
           <% end %>
         </div>
+        <% if current_user.is_nanny %>
+          <div class="card-footer">
+            <i class="fa fa-heart float-right pl-2" aria-hidden="true"></i>
+            <%= link_to edit_event_path(event) do %>
+              <i class="far fa-edit float-right"></i>
+            <% end %>
+          </div>
+        <% end %>
+        </div>  
       </div>
-        <div class="card-footer">
-          <i class="fa fa-heart float-right pl-2" aria-hidden="true"></i>
-          <% if current_user.is_nanny %>
-          <%= link_to edit_event_path(event) do %>
-            <i class="far fa-edit float-right"></i>
-          <% end %>
-      <% end %>
-        </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
 </div>
