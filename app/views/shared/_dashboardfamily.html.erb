@@ -29,6 +29,7 @@
   <% if kid.babysits.empty? && @kids.include?(kid.id) %>
     <p>Ajouter une nounou à <%= kid.first_name.capitalize %> </p>
     <form action="/dashboard" class='form-inline justify-content-between'>
+		<input type="hidden" name="kids" value="<%=kid.id%>">
       <input type="text" name="email" placeholder="Email de la nounou">
       <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
     </form>
