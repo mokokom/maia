@@ -33,7 +33,7 @@
       <input type="text" name="email" placeholder="Email de la nounou">
       <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
     </form>
-    
+
     <% if @result %>
       <%= @result.first_name %>
       <%= form_for([kid, @babysit]) do |f| %>

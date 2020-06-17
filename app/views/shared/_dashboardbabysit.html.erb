@@ -2,12 +2,17 @@
 <div class="d-flex flex-wrap my-3">
   <% current_user.babysits.each do |babysit| %>
     <div class="kid-container">
-      <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1" data-criteria-type="kid" data-selected="<%= @kids.include?(babysit.kid.id)%>" data-criteria-value=<%=babysit.kid_id%>>
+      <div id="kid-<%="#{babysit.kid_id}"%>"
+        class="avatar-kids m-1"
+        data-criteria-type="kid"
+        data-selected="<%= @kids.include?(babysit.kid.id)%>"
+        data-criteria-value=<%=babysit.kid_id%>>
         <%= babysit.kid.first_name %>
       </div>
     </div>
   <% end %>
 </div>
+
 <% current_user.babysits.each do |babysit| %>
   <% if babysit.validated == false && @kids.include?(babysit.kid.id)%>
     <p> en attente de validation
