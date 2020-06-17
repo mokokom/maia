@@ -33,12 +33,18 @@
       <input type="text" name="email" placeholder="Email de la nounou">
       <input type="submit" value='chercher' class="shadow-sm py-1 px-2 bg-white rounded-pill border-0">
     </form>
-    
+
     <% if @result %>
+    <div class="nanny-results">
+      <p>resultat(s)</p>
       <%= @result.first_name %>
+      <%= @result.last_name %>
+      <%= @result.adress %>
+      <%= @result.phone_number %>
       <%= form_for([kid, @babysit]) do |f| %>
         <%= f.hidden_field :user_id, value: @result.id %>
         <%= f.submit %>
+      </div>
       <% end %>
     <% end %>
   <% end %>

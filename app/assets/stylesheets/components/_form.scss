@@ -93,6 +93,10 @@ select.date-time {
   -webkit-appearance: none;
 }
 
+.container-tags input[type="radio"]:checked {
+  border: 3px solid black;
+}
+
 .container-tags label {
   display: none;
 }
@@ -171,3 +175,7 @@ input#event_tag_photo {
   text-align: center;
 }
 
+
+.nanny-results {
+
+}
