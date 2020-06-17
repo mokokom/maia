@@ -75,8 +75,9 @@ const initCriterias = () => {
       const tagCriteria = getCriterias("tag");
       console.log(tagCriteria);
 
-      const url = new URL("https://maiawagon.herokuapp.com/dashboard");
+      // const url = new URL("https://maiawagon.herokuapp.com/dashboard");
       // const url = new URL("/dashboard", "http://localhost:3000");
+      const url = new URL("/dashboard", window.location.origin);
       const params = { kids: kidCriteria, tags: tagCriteria };
       url.search = new URLSearchParams(params).toString();
       // fetch(url);
