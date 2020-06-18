@@ -16,32 +16,32 @@
     <% day = "" %>
     <% events.each do |event| %>
       <% if event.begin_event.strftime("%A") == "Monday" %>
-        <% day = "Lundi" %>
+        <% day = "Lun." %>
       <% elsif event.begin_event.strftime("%A") == "Tuesday"%>
-        <% day = "Mardi" %>
+        <% day = "Mar." %>
       <% elsif event.begin_event.strftime("%A") == "Wednesday"%>
-        <% day = "Mercredi" %>
+        <% day = "Mer." %>
       <% elsif event.begin_event.strftime("%A") == "Thursday"%>
-        <% day = "Jeudi" %>
+        <% day = "Jeu." %>
       <% elsif event.begin_event.strftime("%A") == "Friday"%>
-        <% day = "Vendredi" %>
+        <% day = "Vend." %>
       <% elsif event.begin_event.strftime("%A") == "Saturday"%>
-        <% day = "Samedi" %>
+        <% day = "Sam." %>
       <% elsif event.begin_event.strftime("%A") == "Sunday"%>
-        <% day = "Dimanche" %>
+        <% day = "Dim." %>
       <% end %>
     <% end %>
     <% if(event.babysit.kid_id == babysit.kid_id) %>
       <div id="kid-<%="#{babysit.kid_id}-card"%>" data-tag="<%= event.tag.downcase %>" class="card border-light mb-3 <%= event.tag.downcase %>-color">
         <div class="card-header">
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between align-items-center">
             <span><%= event.babysit.kid.first_name %></span>
             <% if event.title.blank? %>
               <span><%= tag.capitalize %></span>
             <% else %>
               <span><%= event.title %></span>
             <% end %>
-            <span><%= day %> <%=event.begin_event.strftime("%Hh%M")%>
+            <span class="card-date"><%= day %> <%=event.begin_event.strftime("%Hh%M")%>
               <% if event.end_event.nil? %>
                 <%= "" %> </span>
             <% else %>
@@ -57,15 +57,13 @@
             <%= cl_image_tag event.photo.key, crop: :fill %>
           <% end %>
         </div>
-      </div>
-        <div class="card-footer">
-          <i class="fa fa-heart float-right pl-2" aria-hidden="true"></i>
-          <% if current_user.is_nanny %>
+        <i class="fa fa-heart float-right pl-2" aria-hidden="true"></i>
+        <% if current_user.is_nanny %>
           <%= link_to edit_event_path(event) do %>
             <i class="far fa-edit float-right"></i>
           <% end %>
-      <% end %>
-        </div>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>

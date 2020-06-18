@@ -1,15 +1,23 @@
-<div class="form-container">
-  <div class="form-centered">
-    <h2>Ajouter un enfant à votre tableau de bord</h2>
-
-    <h2>Editer le profil</h2>
-    <%= simple_form_for(@kid) do |f| %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :contract, as: :file %>
-    <%= f.input :first_name %>
-    <%= f.input :age %>
-    <%= f.input :weight %>
-    <%= f.button :submit  %>
-    <% end %>
+<div class="container-bg-pink">
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-5">
+      <div class="col-8">
+        <div class="form-container">
+          <div class="form-centered">
+            <h3 class="text-center mb-5"><span class="underline-title inscription">Editer le profil de <%= @kid.first_name %></span></h3>
+            <%= simple_form_for(@kid) do |f| %>
+              <%= f.input :first_name %>
+              <%= f.input :age %>
+              <%= f.input :weight %>
+              <%= f.input :photo, as: :file %>
+              <%= f.input :contract, as: :file %>
+              <div class="form-actions text-center mt-4">
+                <%= f.button :submit, "Editer", class: "shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0"  %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

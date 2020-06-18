@@ -1,64 +1,83 @@
 <div class="container-bg-pink-home">
- <div class="container-fluid bg-pink">
-  <div class="row vh-50 position-relative">
-    <div class="icon-box vegetable">
-      <%= image_tag("vegetable.png") %>
+  <div class="container-fluid bg-pink">
+    <div class="row vh-50 position-relative">
+      <div class="icon-box vegetable">
+        <%= image_tag("vegetable.png") %>
+      </div>
+      <div class="icon-box sleep">
+        <%= image_tag("sleep.png") %>
+      </div>
+      <div class="icon-box activity">
+        <%= image_tag("activity.png") %>
+      </div>
+      <div class="icon-box camera">
+        <%= image_tag("camera.png") %>
+      </div>
+      <div class="icon-box diaper">
+        <%= image_tag("diaper.png") %>
+      </div>
+      <div class="icon-box health">
+        <%= image_tag("health.png") %>
+      </div>
     </div>
-    <div class="icon-box sleep">
-      <%= image_tag("sleep.png") %>
+    <div class="row vh-50 justify-content-center">
+      <div class="col-12 text-center">
+        <p class="maia">maÏa</p>
+        <% if user_signed_in? %>
+          <div class="d-flex flex-column align-items flex-md-row justify-content-md-around">
+            <%= link_to dashboard_path do %>
+              <button class="shadow-sm p-2 px-3 mb-3 rounded-pill border-0 connexion-btn">Journal de mes kids</button>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <button class="shadow-sm p-2 px-3 mb-4 bg-white rounded-pill border-0">Déconnexion</button>
+              <% end %>
+            <% end %>
+          </div>
+        <% else %>
+          <h4 class="text-center mb-4">Suivez et partagez le quotidien de votre enfant</h4>
+          <div class="d-flex flex-column align-items flex-md-row justify-content-md-around">
+            <%= link_to new_user_session_path do %>
+              <button class="shadow-sm p-2 px-3 mb-4 rounded-pill border-0 connexion-btn">Connexion</button>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+              <button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0 inscription-btn">Inscription</button>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="icon-box activity">
-      <%= image_tag("activity.png") %>
-    </div>
-    <div class="icon-box camera">
-      <%= image_tag("camera.png") %>
-    </div>
-    <div class="icon-box diaper">
-      <%= image_tag("diaper.png") %>
-    </div>
-    <div class="icon-box health">
-      <%= image_tag("health.png") %>
-    </div>
-  </div>
-  <div class="row vh-50 justify-content-center">
-    <div class="col-8 text-center">
-      <p>maÏa</p>
-      <p class="text-center">Suivez et partagez le quotidien de votre enfant</p>
-      <%= link_to new_user_session_path do %>
-      <button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0">connexion</button>
-      <% end %>
-      <%= link_to new_user_registration_path do %>
-      <button class="shadow-sm p-2 px-3 mb-3 bg-white rounded-pill border-0">inscription</button>
-      <% end %>
-    </div>
-    <div class="col-8 d-flex flex-column flex-md-row ">
-      <div class="feature-1 mt-5">
-        <div class="icon-feature-1">
-        </div>
-        <div class="description-feature-1 text-center mt-3">
-          <p>Plus qu'un simple carnet de liaison, un véritable album souvenir</p>
+    <% if !user_signed_in? %>
+      <div class="row justify-content-center">
+        <div class="col-8 d-flex flex-column flex-md-row">
+          <div class="feature-1">
+            <div class="icon-feature icon-feature-1">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="description-feature-1 text-center mt-3">
+              <p>Plus qu'un simple carnet de liaison, un véritable album souvenir</p>
+            </div>
+          </div>
+          <div class="feature-1 mt-4">
+            <div class="icon-feature icon-feature-2">
+              <i class="far fa-laugh-beam"></i>
+            </div>
+            <div class="description-feature-1 text-center mt-3">
+              <p>Ne loupez aucune de ses premières fois</p>
+            </div>
+          </div>
+          <div class="feature-1 mt-4">
+            <div class="icon-feature icon-feature-3">
+              <i class="fas fa-user-edit"></i>
+            </div>
+            <div class="description-feature-1 text-center mt-3">
+              <p>Un espace d'échange privilégié pour noter les renseignements pratiques</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="feature-1 mt-5">
-        <div class="icon-feature-1">
-        </div>
-        <div class="description-feature-1 text-center mt-3">
-          <p>Plus qu'un simple carnet de liaison, un véritable album souvenir</p>
-        </div>
-      </div>
-      <div class="feature-1 mt-5">
-        <div class="icon-feature-1">
-        </div>
-        <div class="description-feature-1 text-center mt-3">
-          <p>Plus qu'un simple carnet de liaison, un véritable album souvenir</p>
-        </div>
-        <br>
-        <div class="description-feature-1 text-center mt-3">
-        <%= link_to about_path do %>
+    <% end %>
+    <div class="description-feature-1 text-center mt-3">
+      <%= link_to about_path do %>
         <p><u>Découvrez l'équipe maÏa</u></p>
       <% end %>
-        </div>
-      </div>
     </div>
   </div>
-</div>
