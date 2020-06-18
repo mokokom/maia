@@ -23,7 +23,9 @@ h4 {
 p,
 h4,
 h5,
-span {
+span,
+.fa-heart::before,
+.fa-edit::before {
   opacity: 0.8;
 }
 
