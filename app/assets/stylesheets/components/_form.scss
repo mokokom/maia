@@ -23,13 +23,35 @@
   height: 1px;
   bottom: 0;
   left: 25%;
-  border-bottom: 9px solid $sleep-color;
+  animation: underlinecolor 20500ms infinite ease-in-out;
+  // border-bottom: 9px solid $sleep-color;
 }
 
 .underline-title.inscription:before {
-  border-bottom: 9px solid $camera-color;
+  animation: underlinecolor 20500ms infinite ease-in-out;
+  // border-bottom: 9px solid $camera-color;
 }
 
+@keyframes underlinecolor {
+  0% {
+    border-bottom: 9px solid $activity-color;
+  }
+  20% {
+    border-bottom: 9px solid $sleep-color;
+  }
+  40% {
+    border-bottom: 9px solid $eat-color;
+  }
+  60% {
+    border-bottom: 9px solid $camera-color;
+  }
+  70% {
+    border-bottom: 9px solid $diaper-color;
+  }
+  100% {
+    border-bottom: 9px solid $health-color;
+  }
+}
 .info  {
   font-size: 20px;
   color: black;
@@ -65,7 +87,7 @@
   padding: 10px;
 }
 
-.container-tags .btn:not(:disabled):not(.disabled){
+.container-tags .btn:not(:disabled):not(.disabled) {
   width: 50px;
   height: 50px;
 }
@@ -107,17 +129,17 @@ input#event_tag_food {
   width: 40px;
   height: 40px;
   background-color: $eat-color;
-  background-image: url('vegetable.png');
+  background-image: url("vegetable.png");
   background-size: cover;
   background-position: center;
-  }
+}
 
 input#event_tag_activity {
   border-radius: 16px;
   width: 40px;
   height: 40px;
   background-color: $activity-color;
-  background-image: url('activity.png');
+  background-image: url("activity.png");
   background-size: cover;
   background-position: center;
 }
@@ -127,7 +149,7 @@ input#event_tag_sleep {
   width: 40px;
   height: 40px;
   background-color: $sleep-color;
-  background-image: url('sleep.png');
+  background-image: url("sleep.png");
   background-size: cover;
   background-position: center;
 }
@@ -137,7 +159,7 @@ input#event_tag_health {
   width: 40px;
   height: 40px;
   background-color: $health-color;
-  background-image: url('health.png');
+  background-image: url("health.png");
   background-size: cover;
   background-position: center;
 }
@@ -147,7 +169,7 @@ input#event_tag_diaper {
   width: 40px;
   height: 40px;
   background-color: $diaper-color;
-  background-image: url('diaper.png');
+  background-image: url("diaper.png");
   background-size: cover;
   background-position: center;
 }
@@ -157,7 +179,7 @@ input#event_tag_photo {
   width: 40px;
   height: 40px;
   background-color: $camera-color;
-  background-image: url('camera.png');
+  background-image: url("camera.png");
   background-size: cover;
   background-position: center;
 }
