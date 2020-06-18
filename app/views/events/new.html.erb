@@ -44,7 +44,7 @@
         <%= f.input :end_event, label: false, discard_year: true, discard_month: true %>
        </div>
     </div>
-    <p class='time-event'>Ajoutez votre description</p>
+    <p class='time-event'>Ajoutez votre description(*)</p>
     <p class="new-event-desc"><%= f.input :content, label: false %></p>
     <%= f.input :photo, label: false, as: :file %>
     <%= f.button :submit, value: "Ajouter à #{babysit.kid.first_name}", class: 'create-event-btn btn shadow-sm p-2 px-3 mb-3 mt-2 bg-white rounded-pill border-0'  %>

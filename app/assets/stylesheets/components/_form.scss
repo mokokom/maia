@@ -9,6 +9,15 @@
   background-color: white;
 }
 
+.nounou-search input {
+ border: 3px solid $activity-color;
+  // transform: scale(1.2);
+  // transition: 0.3s ease-in-out;
+  animation: bordercolor 20500ms infinite ease-in-out;
+
+}
+
+
 .new-event-container .string input {
     border: 3px solid $activity-color;
   // transform: scale(1.2);
@@ -24,6 +33,22 @@
 .new-event-container select {
   border: none;
   box-shadow: none;
+}
+
+
+.add-kid-form .string input {
+    border: 3px solid $activity-color;
+  // transform: scale(1.2);
+  // transition: 0.3s ease-in-out;
+  animation: bordercolor 20500ms infinite ease-in-out;
+}
+
+
+.add-kid-form .integer input {
+    border: 3px solid $activity-color;
+  // transform: scale(1.2);
+  // transition: 0.3s ease-in-out;
+  animation: bordercolor 20500ms infinite ease-in-out;
 }
 
 .new-event-container .sub-time-container {
