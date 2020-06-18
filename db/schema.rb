@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_113409) do
+ActiveRecord::Schema.define(version: 2020_06_18_102143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 2020_06_14_113409) do
     t.index ["user_id"], name: "index_kids_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_notifications_on_event_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -96,4 +106,6 @@ ActiveRecord::Schema.define(version: 2020_06_14_113409) do
   add_foreign_key "babysits", "users"
   add_foreign_key "events", "babysits"
   add_foreign_key "kids", "users"
+  add_foreign_key "notifications", "events"
+  add_foreign_key "notifications", "users"
 end

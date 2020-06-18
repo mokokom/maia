@@ -131,6 +131,10 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    notification-handler (3.0.2)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      railties (>= 5.0)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.1)
@@ -266,6 +270,7 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  notification-handler
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
