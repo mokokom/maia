@@ -8,6 +8,7 @@
     class="fas fa-ellipsis-v"></i>
     </button>
     <div class="dropdown-menu">
+      <%= link_to "Notifications", notifications_path, class: "dropdown-item" %>
       <%= link_to "Journal des mes kids", dashboard_path, class: "dropdown-item" %>
       <%= link_to "Mes Kids", kids_path, class: "dropdown-item" %>
       <%= link_to "Mon Profil", edit_user_registration_path, class: "dropdown-item" %>
