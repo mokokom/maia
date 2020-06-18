@@ -37,11 +37,11 @@
           </svg>
         </div>
         <% if user_signed_in? %>
-          <div class="d-flex flex-column align-items flex-md-row justify-content-md-around">
+          <div class="d-flex flex-column align-items flex-md-row justify-content-md-around mt-3">
             <%= link_to dashboard_path do %>
               <button class="shadow-sm p-2 px-3 mb-3 rounded-pill border-0 connexion-btn">Journal de mes kids</button>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <button class="shadow-sm p-2 px-3 mb-4 bg-white rounded-pill border-0">Déconnexion</button>
+                <button class="shadow-sm p-2 px-3 mb-4 bg-white rounded-pill border-0 mt-3">Déconnexion</button>
               <% end %>
             <% end %>
           </div>
