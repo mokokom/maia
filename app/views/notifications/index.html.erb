@@ -1,8 +1,9 @@
-<% current_user.events.each do |event| %>
-  <% event.notifications.each do |notification| %>
-    <p><%= notification.event.title %> - publié par <%= notification.user.first_name %></p>
+<div class="container-bg-pink-home">
+  <% current_user.events.each do |event| %>
+    <% event.notifications.each do |notification| %>
+      <p><%= notification.event.title %> - publié par <%= notification.user.first_name %></p>
+    <% end %>
   <% end %>
-<% end %>
-
+</div>
 
 
