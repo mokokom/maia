@@ -30,11 +30,32 @@
   height: 50vh;
 }
 
-.icon-feature-1 {
+.icon-feature {
   height: 70px;
   width: 70px;
   border-radius: 50px;
-  background-color: rgb(151, 151, 151);
+  box-shadow: 1px 1px 20px #00000014;
+  background-color: $light-pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-feature-1 {
+  color: $sleep-color;
+}
+.icon-feature-2 {
+  color: $activity-color;
+}
+.icon-feature-3 {
+  color: $camera-color;
+}
+
+.fa-book,
+.fa-laugh-beam,
+.fa-user-edit {
+  font-size: 2rem;
+  // opacity: 0.7;
 }
 
 .feature-1 {
