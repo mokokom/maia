@@ -8,9 +8,12 @@ class EventsController < ApplicationController
     @babysit = current_user.babysits.find(params[:babysit_id])
     @event = Event.new(event_params)
     @event.babysit = @babysit
-    @event.save
-
-    redirect_to dashboard_path
+    if @event.save
+      redirect_to dashboard_path
+      @notification = Notification.create(content: '' "#{@event.title}", user: current_user, event: @event)
+    else
+      render :new
+    end
   end
 
   def edit
