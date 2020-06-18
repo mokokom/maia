@@ -13,6 +13,9 @@
 .tag-box.camera {
   background-color: $camera-color;
 }
+.tag-box.photo {
+  background-color: $camera-color;
+}
 .tag-box.activity {
   background-color: $activity-color;
 }
@@ -22,9 +25,13 @@
 }
 
 .tag-box {
+  margin: 2px;
+
   width: 50px;
   height: 50px;
   padding: 7px;
   border-radius: 16px;
   box-shadow: 1px 1px 20px $light-gray-opacity;
 }
+
+
