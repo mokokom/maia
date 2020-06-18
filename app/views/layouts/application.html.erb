@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Maia</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-</head>
-
-<body class=" <%= user_signed_in? ? 'bg-white' : 'bg-pink' %> ">
-  <% unless controller.action_name == 'home'  %>
-  <%= render 'shared/navbar' %>
-  <% end %>
-  <%= yield %>
-
-  <p class="alert"><%= alert %></p>
-
-  
-
-</body>
-
+  <head>
+    <title>maÏa</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag %>
+  </head>
+  <body class=" <%= user_signed_in? ? 'bg-white' : 'bg-pink' %> ">
+    <% unless controller.action_name == 'home'  %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+    <%= yield %>
+    <p class="alert"><%= alert %></p>
+  </body>
 </html>
