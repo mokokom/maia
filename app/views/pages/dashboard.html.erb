@@ -6,7 +6,11 @@
           <div class="profile-container d-flex justify-content-between align-items-start mb-3">
             <div>
               <h5 class="card-title"><%= current_user.first_name %></h5>
-              <p class="card-text mt-2">Une nouvelle journée pour votre enfant!</p>
+              <% if current_user.is_nanny %>
+                <p class="card-text mt-2">Une nouvelle journée pour votre garderie! Partagez les évènements à leurs parents!</p>
+              <% else %>
+                <p class="card-text mt-2">Une nouvelle journée pour votre enfant!</p>
+              <% end %>
             </div>
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, class: "avatar-kids", gravity: :face %>
@@ -18,12 +22,7 @@
               <% end %>
             <% end %>
           </div>
-          <% if current_user.is_nanny %>
-            <p class="card-text">Une nouvelle journée pour votre garderie! Partagez les évènements à leurs parents</p>
-          <% else %>
-            <p class="card-text">Une nouvelle journée pour votre enfant!</p>
-          <% end %>
-          <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">carnet de liaison</button>
+          <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">mes kÏds</button>
         </div>
       </div>
       <% if current_user.is_nanny %>
