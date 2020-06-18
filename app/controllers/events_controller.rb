@@ -10,7 +10,8 @@ class EventsController < ApplicationController
     @event.babysit = @babysit
     if @event.save
       redirect_to dashboard_path
-      @notification = Notification.create(content: '' "#{@event.title}", user: current_user, event: @event)
+      @notification = Notification.create(content: "#{@event.title}", user: current_user, event: @event)
+    raise
     else
       render :new
     end

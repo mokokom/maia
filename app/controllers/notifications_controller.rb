@@ -1,13 +1,6 @@
 class NotificationsController < ApplicationController
   def index
-    @notifications = Notification.all
-  end
-
-  def show
-    @notification = Notification.find(params[:id])
-  end
-
-  def create
-
+    @user = current_user
+    @notifications = @user.notifications
   end
 end
