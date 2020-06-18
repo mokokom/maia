@@ -14,9 +14,7 @@
   // transform: scale(1.2);
   // transition: 0.3s ease-in-out;
   animation: bordercolor 20500ms infinite ease-in-out;
-
 }
-
 
 .new-event-container .string input {
     border: 3px solid $activity-color;
@@ -43,6 +41,9 @@
   animation: bordercolor 20500ms infinite ease-in-out;
 }
 
+.add-kid-form .string input:focus {
+  background-color: red;
+}
 
 .add-kid-form .integer input {
     border: 3px solid $activity-color;
@@ -147,8 +148,15 @@ select.date-time {
   -webkit-appearance: none;
 }
 
-.container-tags input[type="radio"]:checked {
-  border: 3px solid black;
+// .container-tags input[type="radio"]:checked {
+//   border: 3px solid $activity-color;
+//   // transform: scale(1.2);
+//   // transition: 0.3s ease-in-out;
+//   animation: bordercolor 20500ms infinite ease-in-out;
+// }
+
+.container-tags input[type="radio"]:focus {
+  outline: none;
 }
 
 .container-tags label {
@@ -157,22 +165,18 @@ select.date-time {
 
 input#event_tag_food {
   border-radius: 16px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: $eat-color;
   background-image: url('vegetable.png');
   background-size: cover;
   background-position: center;
-  }
-
-input#event_tag_food:active {
-  border: 3px solid black;
 }
 
 input#event_tag_activity {
   border-radius: 16px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: $activity-color;
   background-image: url('activity.png');
   background-size: cover;
@@ -181,8 +185,8 @@ input#event_tag_activity {
 
 input#event_tag_sleep {
   border-radius: 16px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: $sleep-color;
   background-image: url('sleep.png');
   background-size: cover;
@@ -191,8 +195,8 @@ input#event_tag_sleep {
 
 input#event_tag_health {
   border-radius: 16px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: $health-color;
   background-image: url('health.png');
   background-size: cover;
@@ -201,8 +205,8 @@ input#event_tag_health {
 
 input#event_tag_diaper {
   border-radius: 16px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: $diaper-color;
   background-image: url('diaper.png');
   background-size: cover;
@@ -211,8 +215,8 @@ input#event_tag_diaper {
 
 input#event_tag_photo {
   border-radius: 16px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background-color: $camera-color;
   background-image: url('camera.png');
   background-size: cover;
@@ -264,5 +268,11 @@ input#event_tag_photo {
 
 input {
   border-radius: 8px !important;
+}
+
+.tag-check {
+  position: relative;
+  margin-top: 0;
+  margin-left: 0;
 }
 

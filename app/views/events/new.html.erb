@@ -24,7 +24,7 @@
           <div class="container-tags">
             <div class="row">
             <div>
-          <%= f.input :tag, as: :radio_buttons, collection: [['food', 'food'], ['sleep', 'sleep'], ['health', 'health'], ['diaper','diaper'], ['activity', 'activity'], ['Photo', 'photo']], label: "Évènement", :item_wrapper_class => 'btn btn-primary'%>
+          <%= f.input :tag, as: :radio_buttons, collection: [['food', 'food'], ['sleep', 'sleep'], ['health', 'health'], ['diaper','diaper'], ['activity', 'activity'], ['Photo', 'photo']], label: "Évènement", :input_html=> {class: 'tag-check'}, :item_wrapper_class => 'btn tag-box' %>
         </div>
       </div>
     </div>
