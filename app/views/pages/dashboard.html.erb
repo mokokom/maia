@@ -3,8 +3,11 @@
     <div class="col-12 col-md-6">
       <div class="card my-3">
         <div class="card-body">
-          <div class="profile-container d-flex justify-content-between align-items-center mb-3">
-            <h5 class="card-title">Bonjour <%= current_user.first_name %></h5>
+          <div class="profile-container d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <h5 class="card-title"><%= current_user.first_name %></h5>
+              <p class="card-text mt-2">Une nouvelle journée pour votre enfant!</p>
+            </div>
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, class: "avatar-kids", gravity: :face %>
             <% else %>
