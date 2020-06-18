@@ -1,0 +1,31 @@
+circle.circle-logo {
+  fill: blanchedalmond !important;
+  animation: changecolor 20500ms infinite ease-in-out;
+}
+
+@keyframes changecolor {
+  0% {
+    fill: $activity-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  20% {
+    fill: $sleep-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  40% {
+    fill: $eat-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  60% {
+    fill: $camera-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  70% {
+    fill: $diaper-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+  100% {
+    fill: $health-color;
+    box-shadow: 1px 1px 20px $light-gray-opacity;
+  }
+}
