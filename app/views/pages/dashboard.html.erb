@@ -15,7 +15,11 @@
               <% end %>
             <% end %>
           </div>
-          <p class="card-text">Une nouvelle journée pour votre enfant!</p>
+          <% if current_user.is_nanny %>
+            <p class="card-text">Une nouvelle journée pour votre garderie! Partagez les évènements à leurs parents</p>
+          <% else %>
+            <p class="card-text">Une nouvelle journée pour votre enfant!</p>
+          <% end %>
           <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">carnet de liaison</button>
         </div>
       </div>
