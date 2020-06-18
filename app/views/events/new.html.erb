@@ -1,59 +1,53 @@
-
 <div class="container-fluid dashboard new-event-container">
   <div class="row justify-content-md-center">
     <div class="col-12 col-md-6">
       <div class="d-flex flex-wrap my-3 justify-content-center">
+        <% current_user.babysits.each do |babysit| %>
+          <% if babysit.validated == true %>
+            <div class="kid-container kid-event">
+              <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1">
+                <%= babysit.kid.first_name %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
       <% current_user.babysits.each do |babysit| %>
-      <% if babysit.validated == true %>
-        <div class="kid-container kid-event">
-          <div id="kid-<%="#{babysit.kid_id}"%>" class="avatar-kids m-1">
-            <%= babysit.kid.first_name %>
+        <div id="kid-<%="#{babysit.kid_id}-event-container"%>" class="form-container event-form d-none">
+          <div class="form-centered pl-4 pr-4">
+            <p class="title-new-event">Ajout d'un évenement à <%= babysit.kid.first_name %></p>
+            <%= simple_form_for([babysit.kid, babysit, @event]) do |f| %>
+              <%= f.hidden_field :kid_id, value: babysit.kid.id %>
+              <%= f.hidden_field :babysit_id, value: babysit.id %>
+              <div class="container-tags">
+                <div class="row">
+                  <div>
+                    <%= f.input :tag, as: :radio_buttons, collection: [['food', 'food'], ['sleep', 'sleep'], ['health', 'health'], ['diaper','diaper'], ['activity', 'activity'], ['photo', 'photo']], id: "test",  label: "Évènement", :input_html=> {class: 'tag-check'}, :item_wrapper_class => 'btn tag-box' %>
+                  </div>
+                </div>
+              </div>
+              <p class='time-event'>Ajoutez un titre</p>
+              <%= f.input :title, label: false, id: '#{kid.id}' %>
+              <p class='time-event'>..et un badge</p>
+              <%= f.input :badge, label: false %>
+              <p class='info-badge'><i class="fas fa-info-circle"></i> Un badge consiste en un mot qui apporte une précision</p>
+              <div class="time-container">
+                <div >
+                  <p class='time-event'>Heure de début</p>
+                  <%= f.input :begin_event, label: false, discard_year: true, discard_month: true %>
+                </div>
+                <p class='time-event'>Heure de fin</p>
+                <%= f.input :end_event, label: false, discard_year: true, discard_month: true %>
+              </div>
+              <p class='time-event'>Ajoutez votre description(*)</p>
+              <p class="new-event-desc"><%= f.input :content, label: false %></p>
+              <%= f.input :photo, label: false, as: :file %>
+              <%= f.button :submit, value: "Ajouter à #{babysit.kid.first_name}", class: 'create-event-btn btn shadow-sm p-2 px-3 mb-3 mt-2 bg-white rounded-pill border-0'%>
+            <% end %>
           </div>
         </div>
-      <% end %>
-      <% end %>
-      </div>
-
-      <% current_user.babysits.each do |babysit| %>
-      <div id="kid-<%="#{babysit.kid_id}-event-container"%>" class="form-container event-form d-none">
-        <div class="form-centered pl-4 pr-4">
-          <p class="title-new-event">Ajout d'un évenement à <%= babysit.kid.first_name %></p>
-          <%= simple_form_for([babysit.kid, babysit, @event]) do |f| %>
-          <%= f.hidden_field :kid_id, value: babysit.kid.id %>
-          <%= f.hidden_field :babysit_id, value: babysit.id %>
-          <div class="container-tags">
-            <div class="row">
-            <div>
-          <%= f.input :tag, as: :radio_buttons, collection: [['food', 'food'], ['sleep', 'sleep'], ['health', 'health'], ['diaper','diaper'], ['activity', 'activity'], ['Photo', 'photo']], label: "Évènement", :input_html=> {class: 'tag-check'}, :item_wrapper_class => 'btn tag-box' %>
-        </div>
-      </div>
-    </div>
-        <p class='time-event'>Ajoutez un titre</p>
-
-    <%= f.input :title, label: false %>
-        <p class='time-event'>..et un badge</p>
-
-    <%= f.input :badge, label: false %>
-    <p class='info-badge'><i class="fas fa-info-circle"></i> Un badge consiste en un mot qui apporte une précision</p>
-    <div class="time-container">
-      <div >
-      <p class='time-event'>Heure de début</p>
-        <%= f.input :begin_event, label: false, discard_year: true, discard_month: true %>
-    </div>
-      <p class='time-event'>Heure de fin</p>
-        <%= f.input :end_event, label: false, discard_year: true, discard_month: true %>
-       </div>
-    </div>
-    <p class='time-event'>Ajoutez votre description(*)</p>
-    <p class="new-event-desc"><%= f.input :content, label: false %></p>
-    <%= f.input :photo, label: false, as: :file %>
-    <%= f.button :submit, value: "Ajouter à #{babysit.kid.first_name}", class: 'create-event-btn btn shadow-sm p-2 px-3 mb-3 mt-2 bg-white rounded-pill border-0'  %>
-          <% end %>
-        </div>
-      </div>
       <% end %>
     </div>
   </div>
 </div>
-
 

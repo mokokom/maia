@@ -20,12 +20,11 @@ const toggleKids = (event) => {
 
 const colorTags = () => {
    // enlever le selected sur tous les enfants
-  console.log('hello');
   const tags = document.querySelectorAll('input.tag-check');
-      console.log(tags);
+      (tags);
 
   tags.forEach(tag => {
-    console.log(tag.parentElement);
+    (tag.parentElement);
     const tagName = tag.value;
     tag.parentElement.classList.add(tagName);
   });

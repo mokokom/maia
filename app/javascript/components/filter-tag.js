@@ -6,13 +6,13 @@ const filterTag = () => {
   const diaper = document.querySelector(".diaper");
   const photo = document.querySelector(".photo");
   const foodCards = document.querySelector("div[data-tag=repas]");
-  console.log("tag");
+
   document.querySelectorAll("div[data-tag]").forEach(tag => {
-    console.log(tag.attributes["data-tag"].value);
+    (tag.attributes["data-tag"].value);
   });
-  console.log("tag-icon");
+
   document.querySelectorAll(".tag-box").forEach(tag => {
-    console.log(tag.attributes["data-tag-icon"]);
+    (tag.attributes["data-tag-icon"]);
   });
   food.addEventListener("click", e => {
     const dataTags = document.querySelectorAll("div[data-tag]");
@@ -21,7 +21,7 @@ const filterTag = () => {
       // foodCards.classList.add("d-block");
       $(foodCards).addClass("d-block");
     });
-    // console.log(foodCards);
+    // (foodCards);
   });
 };
 
@@ -50,8 +50,8 @@ const initCriterias = () => {
   const btnCriteriasValue = document.querySelectorAll(
     "div[data-criteria-value]"
   );
-  // console.log(btnCriteriasType);
-  // console.log(btnCriteriasValue);
+  // (btnCriteriasType);
+  // (btnCriteriasValue);
   // Micro sur chaque btn a l'event click
   btnCriteriasType.forEach(btn => {
     btn.addEventListener("click", e => {
@@ -70,10 +70,10 @@ const initCriterias = () => {
       // }
       // on récupère ts les btn de critères enfant (getCriteria("kid"))
       const kidCriteria = getCriterias("kid");
-      console.log(kidCriteria);
+      (kidCriteria);
       // on récupère ts les btn de critères tag (getCriteria("tag"))
       const tagCriteria = getCriterias("tag");
-      console.log(tagCriteria);
+      (tagCriteria);
 
       // const url = new URL("https://maiawagon.herokuapp.com/dashboard");
       // const url = new URL("/dashboard", "http://localhost:3000");
@@ -93,20 +93,20 @@ const getCriterias = type => {
   const btnCriteriasTypeSelected = document.querySelectorAll(
     `div[data-criteria-type=${type}]`
   );
-  // console.log(btnCriteriasTypeSelected);
+  // (btnCriteriasTypeSelected);
   const selectedCriterias = [];
   btnCriteriasTypeSelected.forEach(btn => {
     if (btn.dataset.selected == "true") selectedCriterias.push(btn.dataset);
   });
-  // console.log(selectedCriterias);
-  // btnCriteriasTypeSelected.filter(btn => console.log(btn));
+  // (selectedCriterias);
+  // btnCriteriasTypeSelected.filter(btn => (btn));
   //   .filter("div[data-selected=true]");
 
   // map sr le tableau pour recup la valeur de chaque noeux
   // join le tableau avec __
   let criterias = selectedCriterias.map(criteria => criteria.criteriaValue);
 
-  // console.log(criterias.join("__"));
+  // (criterias.join("__"));
   return criterias.join("__");
 };
 
