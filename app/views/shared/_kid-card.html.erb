@@ -57,10 +57,8 @@
             <%= cl_image_tag event.photo.key, crop: :fill %>
           <% end %>
         </div>
-      </div>
-        <div class="card-footer">
-          <i class="far fa-heart float-right pl-2" aria-hidden="true"></i>
-          <% if current_user.is_nanny %>
+        <i class="far fa-heart float-right pl-2" aria-hidden="true"></i>
+        <% if current_user.is_nanny %>
           <%= link_to edit_event_path(event) do %>
             <i class="far fa-edit float-right"></i>
           <% end %>
