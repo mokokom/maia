@@ -9,7 +9,7 @@
               <% if current_user.is_nanny %>
                 <p class="card-text pr-2 mt-2">Une nouvelle journée pour votre garderie! <br> Partagez les évènements à leurs parents!</p>
               <% else %>
-                <p class="card-text mt-2">Une nouvelle journée pour votre enfant!</p>
+                <p class="card-text pr-2 mt-2">Une nouvelle journée pour votre enfant!</p>
               <% end %>
             </div>
             <% if current_user.photo.attached? %>

@@ -8,9 +8,6 @@
               <% if @kid.photo.attached?  %>
                 <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
                  <% end %>
-                <% if current_user.photo.attached?  %>
-                <%= cl_image_tag current_user.photo.key, crop: :fill, gravity: :face, class: "avatar-kids"  %>
-              <% end %>
           </div>
         </div>
       </div>
