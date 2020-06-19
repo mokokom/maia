@@ -8,9 +8,6 @@
               <% if @kid.photo.attached?  %>
                 <%= cl_image_tag @kid.photo.key, crop: :fill, gravity: :face, class: "avatar-kids" %>
                  <% end %>
-                <% if current_user.photo.attached?  %>
-                <%= cl_image_tag current_user.photo.key, crop: :fill, gravity: :face, class: "avatar-kids"  %>
-              <% end %>
           </div>
         </div>
       </div>
@@ -35,7 +32,7 @@
 <p class="category-profil">Nom</p>
 <p class="font-weight-bold"><%=@kid.parent.last_name%></p>
 <br>
-<p class="category-profil">Age</p>
+<p class="category-profil">Age (en mois)</p>
 <p class="font-weight-bold"><%= @kid.age %>mois</p>
 <p class="category-profil">Poids<p>
 <p class="font-weight-bold"><%= @kid.weight %>kgs</p>
