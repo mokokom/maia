@@ -16,7 +16,7 @@
     <%= simple_form_for(@kid) do |f| %>
     <p class='time-event'>Prénom<p>
       <%= f.input :first_name, label: false, input_html: { class: 'bg-white' } %>
-      <p class='time-event'>Age<p>
+      <p class='time-event'>Age (en mois)<p>
       <%= f.input :age, label: false, input_html: { class: 'bg-white' } %>
       <p class='time-event'>Poids<p>
       <%= f.input :weight, label: false, input_html: { class: 'bg-white' } %>
@@ -47,12 +47,11 @@
        <p><%= @result.phone_number %></p>
        <%= form_for([kid, @babysit]) do |f| %>
         <%= f.hidden_field :user_id, value: @result.id %>
-        <%= f.submit %>
+        <%= f.submit :Envoyer, class: 'btn btn-pr' %>
       </div>
       <% end %>
     <% end %>
   <% end %>
-
   <% kid.babysits.each do |babysit| %>
     <% if babysit.validated == false && @kids.include?(kid.id) %>
       <h6 > Votre demande pour la garde de <%= babysit.kid.first_name %> a bien été envoyée. Nous attendons sa confirmation.</h6>

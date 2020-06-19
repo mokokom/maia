@@ -15,9 +15,9 @@
 
 <% current_user.babysits.each do |babysit| %>
   <% if babysit.validated == false && @kids.include?(babysit.kid.id)%>
-    <p> en attente de validation
-      <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch,  data: { confirm: "sure? " } do %>
-        <i class="far fa-check-circle"></i>
+    <p> La demande pour <%= babysit.kid.first_name %> est en attente de validation de votre part
+      <%= link_to kid_babysit_path(babysit.kid_id, babysit.id), method: :patch, data: { confirm: "Confirmer la garde ?" } do %>
+        <i class="far fa-check-circle font-size"></i>
       </p>
     <% end %>
   <% end %>
