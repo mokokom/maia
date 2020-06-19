@@ -7,7 +7,8 @@
             <div>
               <h5 class="card-title"><%= current_user.first_name %></h5>
               <% if current_user.is_nanny %>
-                <p class="card-text pr-2 mt-2">Une nouvelle journée pour votre garderie! <br> Partagez les évènements à leurs parents!</p>
+                <p class="card-text pr-2 mt-2">Une nouvelle journée pour votre garderie! <br>
+                   Partagez les évènements à leurs parents!</p>
               <% else %>
                 <p class="card-text pr-2 mt-2">Une nouvelle journée pour votre enfant!</p>
               <% end %>
@@ -22,12 +23,8 @@
               <% end %>
             <% end %>
           </div>
-
           <%= link_to kids_path do  %>
-          <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">mes kÏds</button>
-          <% end %>
-          <% if !@events.empty? %>
-          <div class="font-italic mt-3 info-event-dashboard">dernier évenement à <%= @events.last.begin_event.strftime("%H:%M") %> - <%= @events.last.babysit.kid.first_name  %></div>
+            <button href="#" class="shadow-sm py-1 px-3 bg-white rounded-pill border-0">mes kÏds</button>
           <% end %>
         </div>
       </div>

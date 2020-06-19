@@ -19,25 +19,26 @@
         <!-- <div class="connexion-container"> -->
         <h3 class="text-center mb-5"><span class="underline-title inscription">Inscription</span> </h3>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
           <div class="form-inputs">
-            <!-- <%= f.input :is_nanny, as: :boolean,
-                required: true %>
-    <%= f.input :first_name,
-                required: true %>
-    <%= f.input :last_name,
-                required: true %>
-    <%= f.input :email %>
-
-        <%= f.input :is_nanny, as: :boolean, label: false,
-                required: true %> -->
-            <%= f.input :is_nanny, label: false, default: 1, collection: ["nounou", "famille"] %>
+            <%= f.input :is_nanny, label: false, default: 1, collection: [["nounou", true], ["famille", false]] %>
             <%= f.input :email,
                 label: false,
                 placeholder: "email",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+            <%= f.input :first_name,
+                label: false,
+                placeholder: "Prénom",
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Prénom" }%>
+            <%= f.input :last_name,
+                label: false,
+                placeholder: "Nom",
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Nom" }%>
             <%= f.input :password,
                 label: false,
                 placeholder: "mot de passe",
@@ -60,3 +61,4 @@
       </div>
     </div>
   </div>
+</div>
