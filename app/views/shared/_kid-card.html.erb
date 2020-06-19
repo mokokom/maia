@@ -52,7 +52,7 @@
       <div class="card-body">
         <p class="card-text"><%= event.content %> </p>
         <span class="badge badge-pill badge-primary"><%= event.badge%></span>
-        <div class="align-photo">
+        <div class="align-photo my-3">
           <% if event.photo.attached? %>
             <%= cl_image_tag event.photo.key, crop: :fill %>
           <% end %>
